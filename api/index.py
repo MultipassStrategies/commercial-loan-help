@@ -181,7 +181,7 @@ class handler(BaseHTTPRequestHandler):
 
             client = Anthropic(api_key=api_key)
             with client.messages.stream(
-                model="claude-3-5-haiku-20241022",
+                model="claude-haiku-4-5",
                 max_tokens=600,
                 system=FULL_SYSTEM,
                 messages=cleaned,
