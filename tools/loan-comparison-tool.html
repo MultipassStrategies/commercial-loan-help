@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Commercial Loan Comparison Tool: Compare Side-by-Side | Commercial Loan Help</title>
+<meta name="description" content="Free commercial loan comparison tool. Compare up to 3 loan offers side by side with monthly payments, total cost of capital, effective rates, and balloon payments to find the best deal.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/tools/loan-comparison-tool">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Commercial Loan Comparison Tool: Compare Side-by-Side">
+<meta property="og:description" content="Free commercial loan comparison tool. Compare up to 3 loan offers side by side with monthly payments, total interest, effective rates, and balloon payments.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/tools/loan-comparison-tool">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chatbot.css?v=5">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Commercial Loan Comparison Tool",
+  "description": "Free commercial loan comparison calculator. Compare up to 3 loan offers side by side with monthly payments, total cost of capital, effective rates, and balloon payments.",
+  "url": "https://www.commercialloanhelp.com/tools/loan-comparison-tool",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Commercial Loan Help"
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the total cost of capital for a commercial loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Total cost of capital is the sum of all expenses associated with borrowing, including total interest paid over the loan term, origination fees, annual fees for the life of the term, and estimated closing costs. This metric gives you a true picture of what a loan will cost, because two loans with the same interest rate can have very different total costs depending on their fee structures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the effective annual rate on a commercial loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The effective annual rate accounts for not just the stated interest rate but also the impact of fees and closing costs spread over the loan term. It represents the true annual cost of borrowing when all costs are included. A loan with a lower stated rate but high fees may actually have a higher effective rate than a loan with a slightly higher stated rate and lower fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I always choose the loan with the lowest interest rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. The lowest interest rate does not always mean the lowest total cost. Origination fees, closing costs, annual servicing fees, and the loan term all affect your total expense. A loan at 7.0% with 2 points in origination and $15,000 in closing costs may cost more over 10 years than a loan at 7.25% with no origination fee and $5,000 in closing costs. Always compare total cost of capital and effective annual rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does amortization period affect my loan comparison?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The amortization period determines your monthly payment amount. A longer amortization (such as 30 years versus 20 years) results in lower monthly payments but more total interest over the loan term. It also means a larger balloon payment at maturity because less principal has been paid down. When comparing loans, make sure you understand how different amortization periods affect both your monthly cash flow and your total cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a balloon payment and why does it matter when comparing loans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A balloon payment is the remaining loan balance due at the end of the loan term when the term is shorter than the amortization period. This is standard in commercial lending. For example, a loan with a 25-year amortization and 10-year term will have a large balance due after 10 years. When comparing loans, consider the balloon payment size because it represents the amount you will need to refinance or pay at maturity. A smaller balloon payment reduces your refinancing risk."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .tool-hero {
+    background: linear-gradient(135deg, var(--clh-brand-deep) 0%, var(--clh-brand-dark) 100%);
+    padding-block: clamp(var(--space-10), 6vw, var(--space-16));
+    text-align: center;
+    color: var(--color-text-inverse);
+  }
+  .tool-hero h1 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+  .tool-hero p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .tool-section-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-brand);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tool-section-label:first-child {
+    margin-top: 0;
+  }
+
+  .tool-input-wrap {
+    position: relative;
+  }
+  .tool-input-wrap .tool-prefix {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap .tool-suffix {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap input.has-prefix {
+    padding-left: var(--space-7);
+  }
+  .tool-input-wrap input.has-suffix {
+    padding-right: var(--space-8);
+  }
+
+  .tool-education {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+  }
+  .tool-education h2 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-10);
+    letter-spacing: -0.02em;
+  }
+  .tool-education h2:first-child {
+    margin-top: 0;
+  }
+  .tool-education p {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+  .tool-education ul {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+  }
+  .tool-education li {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+  .tool-education .formula-highlight {
+    background: var(--clh-gray);
+    border-left: 4px solid var(--clh-accent);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-md);
+    margin-block: var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--clh-brand);
+    text-align: center;
+  }
+
+  /* Loan columns layout */
+  .loan-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+  .loan-columns.three-cols {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .loan-column {
+    background: var(--clh-gray);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    position: relative;
+  }
+  .loan-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+  .loan-column-title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--clh-brand);
+  }
+  .loan-remove-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .loan-remove-btn:hover {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+  }
+  .loan-column .tool-input-group {
+    margin-bottom: var(--space-3);
+  }
+  .loan-column .tool-input-group label {
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-1);
+  }
+  .loan-column .tool-input-group input {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
+  }
+  .loan-column .tool-input-wrap input.has-prefix {
+    padding-left: calc(var(--space-3) + 14px);
+  }
+  .loan-column .tool-input-wrap input.has-suffix {
+    padding-right: calc(var(--space-3) + 14px);
+  }
+  .loan-column .tool-input-wrap .tool-prefix,
+  .loan-column .tool-input-wrap .tool-suffix {
+    font-size: var(--text-xs);
+  }
+
+  .add-loan-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    margin-top: var(--space-4);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .add-loan-btn:hover {
+    border-color: var(--clh-brand);
+    color: var(--clh-brand);
+    background: rgba(45, 66, 131, 0.04);
+  }
+
+  /* Comparison results table */
+  .comparison-table-wrap {
+    overflow-x: auto;
+    margin-top: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    min-width: 500px;
+  }
+  .comparison-table th {
+    background: var(--clh-brand);
+    color: white;
+    padding: var(--space-3) var(--space-4);
+    text-align: right;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .comparison-table th:first-child {
+    text-align: left;
+  }
+  .comparison-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: right;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+  }
+  .comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  .comparison-table .best-value {
+    background: rgba(40, 167, 69, 0.12);
+    font-weight: 700;
+    position: relative;
+  }
+  .best-badge {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .loan-columns {
+      grid-template-columns: 1fr;
+    }
+    .loan-columns.three-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<main>
+
+<!-- NAVIGATION -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Commercial Loan Help home">
+      <img src="../logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../investors.html">Investors</a></li>
+      <li><a href="../small-business.html">Small Business</a></li>
+      <li><a href="../hospitality.html">Hospitality</a></li>
+      <li><a href="../learn.html">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="../match.html" class="btn btn-primary hide-mobile">Find My Loan</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TOOL HERO -->
+<section class="tool-hero">
+  <div class="container">
+    <h1>Commercial Loan Comparison Tool: Compare Offers Side by Side</h1>
+    <p>Enter up to 3 loan offers to compare monthly payments, total cost of capital, effective rates, and balloon payments. Find the best deal for your property.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="tool-container">
+  <div class="tool-card" id="comparison-calc">
+
+    <div class="tool-section-label">Enter Loan Details</div>
+
+    <div class="loan-columns" id="loan-columns">
+
+      <!-- Loan 1 -->
+      <div class="loan-column" id="loan-col-1">
+        <div class="loan-column-header">
+          <span class="loan-column-title">Loan 1</span>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-name">Loan Name / Label</label>
+          <input type="text" id="loan1-name" placeholder="e.g. Bank A Offer" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-amount">Loan Amount</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan1-amount" class="has-prefix currency-input" placeholder="e.g. 1,000,000" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-rate">Interest Rate</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan1-rate" class="has-suffix" placeholder="e.g. 7.25" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-amort">Amortization (years)</label>
+          <input type="text" id="loan1-amort" placeholder="e.g. 25" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-term">Loan Term (years)</label>
+          <input type="text" id="loan1-term" placeholder="e.g. 10" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-origination">Origination Fee</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan1-origination" class="has-suffix" placeholder="e.g. 1.0" value="1.0" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-annual-fees">Annual Fees</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan1-annual-fees" class="has-prefix currency-input" placeholder="e.g. 500" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan1-closing">Estimated Closing Costs</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan1-closing" class="has-prefix currency-input" placeholder="e.g. 10,000" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Loan 2 -->
+      <div class="loan-column" id="loan-col-2">
+        <div class="loan-column-header">
+          <span class="loan-column-title">Loan 2</span>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-name">Loan Name / Label</label>
+          <input type="text" id="loan2-name" placeholder="e.g. CMBS Offer" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-amount">Loan Amount</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan2-amount" class="has-prefix currency-input" placeholder="e.g. 1,000,000" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-rate">Interest Rate</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan2-rate" class="has-suffix" placeholder="e.g. 6.75" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-amort">Amortization (years)</label>
+          <input type="text" id="loan2-amort" placeholder="e.g. 30" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-term">Loan Term (years)</label>
+          <input type="text" id="loan2-term" placeholder="e.g. 10" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-origination">Origination Fee</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan2-origination" class="has-suffix" placeholder="e.g. 1.0" value="1.0" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-annual-fees">Annual Fees</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan2-annual-fees" class="has-prefix currency-input" placeholder="e.g. 500" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan2-closing">Estimated Closing Costs</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan2-closing" class="has-prefix currency-input" placeholder="e.g. 10,000" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Loan 3 (hidden by default) -->
+      <div class="loan-column" id="loan-col-3" style="display: none;">
+        <div class="loan-column-header">
+          <span class="loan-column-title">Loan 3</span>
+          <button class="loan-remove-btn" id="remove-loan3" title="Remove Loan 3">Remove</button>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-name">Loan Name / Label</label>
+          <input type="text" id="loan3-name" placeholder="e.g. Credit Union Offer" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-amount">Loan Amount</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan3-amount" class="has-prefix currency-input" placeholder="e.g. 1,000,000" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-rate">Interest Rate</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan3-rate" class="has-suffix" placeholder="e.g. 7.50" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-amort">Amortization (years)</label>
+          <input type="text" id="loan3-amort" placeholder="e.g. 20" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-term">Loan Term (years)</label>
+          <input type="text" id="loan3-term" placeholder="e.g. 7" inputmode="decimal" autocomplete="off">
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-origination">Origination Fee</label>
+          <div class="tool-input-wrap">
+            <input type="text" id="loan3-origination" class="has-suffix" placeholder="e.g. 1.0" value="1.0" inputmode="decimal" autocomplete="off">
+            <span class="tool-suffix">%</span>
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-annual-fees">Annual Fees</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan3-annual-fees" class="has-prefix currency-input" placeholder="e.g. 500" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+        <div class="tool-input-group">
+          <label for="loan3-closing">Estimated Closing Costs</label>
+          <div class="tool-input-wrap">
+            <span class="tool-prefix">$</span>
+            <input type="text" id="loan3-closing" class="has-prefix currency-input" placeholder="e.g. 10,000" value="0" inputmode="decimal" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="add-loan-btn" id="add-loan-btn">+ Add a Third Loan to Compare</button>
+
+    <button class="tool-btn" id="calc-btn" style="margin-top: var(--space-5);">Compare Loans</button>
+
+    <!-- Results -->
+    <div class="tool-result" id="calc-result">
+      <div class="tool-section-label" style="margin-top: 0;">Comparison Results</div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table" id="comparison-table">
+          <thead id="comp-thead"></thead>
+          <tbody id="comp-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="tool-disclaimer">This calculator provides estimates for educational purposes only. Actual lender terms, fees, and calculations may vary. This is not a commitment to lend.</p>
+  </div>
+</section>
+
+<!-- EDUCATIONAL CONTENT -->
+<section class="tool-education">
+
+  <h2>How to Compare Commercial Loan Offers</h2>
+  <p>When you receive multiple loan offers for a commercial property, the interest rate is the first number most borrowers look at. While rate is important, it is only one piece of the picture. The true cost of a loan includes origination fees, closing costs, annual servicing fees, and the structure of the loan itself. Two loans at the same rate can have very different total costs depending on these additional factors.</p>
+  <p>This comparison tool is designed to help you evaluate up to three loan offers by calculating the metrics that matter most. By entering the details of each offer, you can see a clear side-by-side breakdown that highlights which loan is the best fit for your situation.</p>
+
+  <h2>Key Metrics to Compare</h2>
+  <p>When evaluating commercial loan offers, focus on these five metrics:</p>
+  <ul>
+    <li><strong>Monthly Payment:</strong> The amount you will pay each month for principal and interest. A lower monthly payment improves cash flow but may result from a longer amortization (which means more total interest and a larger balloon payment).</li>
+    <li><strong>Total Interest Over the Term:</strong> The cumulative interest you will pay from origination through the end of the loan term. This does not include fees or closing costs.</li>
+    <li><strong>Total Cost of Capital:</strong> The single most telling number. This adds total interest, origination fees, annual fees over the full term, and closing costs into one figure. It represents the all-in cost of the loan.</li>
+    <li><strong>Effective Annual Rate:</strong> The true annualized cost of borrowing when all fees and costs are factored in. This allows you to compare loans with different fee structures on an apples-to-apples basis.</li>
+    <li><strong>Balloon Payment at Maturity:</strong> The remaining balance when the loan term expires. If the term is shorter than the amortization period, you will need to refinance or sell to cover this amount.</li>
+  </ul>
+
+  <div class="formula-highlight">Total Cost of Capital = Total Interest + Origination Fee + (Annual Fees x Term) + Closing Costs</div>
+
+  <h2>What to Look for Beyond the Interest Rate</h2>
+  <p>Experienced borrowers know that rate is important but not everything. Here are additional factors to weigh when comparing offers:</p>
+  <ul>
+    <li><strong>Prepayment penalties:</strong> Some loans (especially CMBS) carry steep prepayment costs through yield maintenance or defeasance. If you plan to sell or refinance before maturity, these penalties can add significant expense.</li>
+    <li><strong>Recourse vs. non-recourse:</strong> A non-recourse loan limits your personal liability, which has value even if the rate is slightly higher. Weigh the risk protection against the cost difference.</li>
+    <li><strong>Rate lock period:</strong> How long is the rate guaranteed before closing? A longer lock protects you against rate increases during the closing process.</li>
+    <li><strong>Flexibility:</strong> Can you make additional principal payments? Is there an interest-only option? Can the loan be assumed by a buyer? These features can affect your total cost and exit strategy.</li>
+    <li><strong>Lender reputation and speed:</strong> A slightly more expensive loan from a reliable lender who closes on time can be worth more than a cheaper offer from a lender who may not perform.</li>
+  </ul>
+
+  <h2>Putting It All Together</h2>
+  <p>The best loan for your deal is not always the one with the lowest rate. It is the one with the lowest total cost of capital, the most favorable terms, and the structure that matches your business plan. If you are holding the property long-term, total interest and annual fees matter most. If you plan to sell or refinance within a few years, focus on upfront costs, prepayment flexibility, and the balloon payment amount.</p>
+  <p>Use this tool to run the numbers, then consider the qualitative factors listed above. The combination of quantitative analysis and practical judgment will lead you to the right decision. For help comparing offers from real lenders, <a href="../match.html" style="color: var(--clh-brand); font-weight: 600;">tell us about your deal</a> and we will connect you with multiple options.</p>
+
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container" style="max-width: 760px;">
+    <h2 style="text-align: center; font-size: var(--text-xl); font-weight: 800; margin-bottom: var(--space-8);">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-compare-1">
+          <span>What is the total cost of capital for a commercial loan?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-compare-1" role="region">
+          <div class="faq-answer-inner">
+            <p>Total cost of capital is the sum of all expenses associated with borrowing, including total interest paid over the loan term, origination fees, annual fees for the life of the term, and estimated closing costs. This metric gives you a true picture of what a loan will cost, because two loans with the same interest rate can have very different total costs depending on their fee structures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-compare-2">
+          <span>What is the effective annual rate on a commercial loan?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-compare-2" role="region">
+          <div class="faq-answer-inner">
+            <p>The effective annual rate accounts for not just the stated interest rate but also the impact of fees and closing costs spread over the loan term. It represents the true annual cost of borrowing when all costs are included. A loan with a lower stated rate but high fees may actually have a higher effective rate than a loan with a slightly higher stated rate and lower fees.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-compare-3">
+          <span>Should I always choose the loan with the lowest interest rate?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-compare-3" role="region">
+          <div class="faq-answer-inner">
+            <p>Not necessarily. The lowest interest rate does not always mean the lowest total cost. Origination fees, closing costs, annual servicing fees, and the loan term all affect your total expense. A loan at 7.0% with 2 points in origination and $15,000 in closing costs may cost more over 10 years than a loan at 7.25% with no origination fee and $5,000 in closing costs. Always compare total cost of capital and effective annual rate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-compare-4">
+          <span>How does amortization period affect my loan comparison?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-compare-4" role="region">
+          <div class="faq-answer-inner">
+            <p>The amortization period determines your monthly payment amount. A longer amortization (such as 30 years versus 20 years) results in lower monthly payments but more total interest over the loan term. It also means a larger balloon payment at maturity because less principal has been paid down. When comparing loans, make sure you understand how different amortization periods affect both your monthly cash flow and your total cost.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-compare-5">
+          <span>What is a balloon payment and why does it matter when comparing loans?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-compare-5" role="region">
+          <div class="faq-answer-inner">
+            <p>A balloon payment is the remaining loan balance due at the end of the loan term when the term is shorter than the amortization period. This is standard in commercial lending. For example, a loan with a 25-year amortization and 10-year term will have a large balance due after 10 years. When comparing loans, consider the balloon payment size because it represents the amount you will need to refinance or pay at maturity. A smaller balloon payment reduces your refinancing risk.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Ready to Get Real Loan Offers to Compare?</h2>
+    <p>Tell us about your property in 60 seconds. We will match you to multiple lenders so you can compare actual term sheets side by side. No credit pull. No commitment. No cost.</p>
+    <a href="../match.html" class="btn btn-white btn-lg">Find My Loan Options</a>
+    <p class="cta-trust-line">Hundreds of lender relationships. All loan types. Nationwide. Licensed in all 50 states.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender: fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="../loans.html">All Loan Products</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="../loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="../loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="../loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="../investors.html">Real Estate Investors</a></li>
+          <li><a href="../small-business.html">Small Business Owners</a></li>
+          <li><a href="../hospitality.html">Hospitality Operators</a></li>
+          <li><a href="../match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="../learn.html">Education Hub</a></li>
+          <li><a href="../articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="../articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="../articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="../about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS -->
+<script src="../app.js"></script>
+
+<!-- Loan Comparison Tool Logic -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Helpers ----
+  function parseNum(str) {
+    if (!str) return NaN;
+    return parseFloat(str.replace(/[^0-9.\-]/g, ''));
+  }
+
+  function formatCurrency(n) {
+    if (isNaN(n) || !isFinite(n)) return '$0';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function formatPercent(n) {
+    if (isNaN(n) || !isFinite(n)) return '0.00%';
+    return n.toFixed(2) + '%';
+  }
+
+  function formatInput(input) {
+    var raw = input.value.replace(/[^0-9.]/g, '');
+    var parts = raw.split('.');
+    if (parts[0]) {
+      parts[0] = parseInt(parts[0], 10).toLocaleString('en-US');
+    }
+    input.value = parts.length > 1 ? parts[0] + '.' + parts[1] : parts[0];
+  }
+
+  // Auto-format currency inputs
+  document.querySelectorAll('.currency-input').forEach(function (el) {
+    el.addEventListener('blur', function () { formatInput(el); });
+  });
+
+  // ---- Add / Remove 3rd loan ----
+  var loan3Visible = false;
+  var addBtn = document.getElementById('add-loan-btn');
+  var loanCols = document.getElementById('loan-columns');
+  var loanCol3 = document.getElementById('loan-col-3');
+  var removeBtn = document.getElementById('remove-loan3');
+
+  addBtn.addEventListener('click', function () {
+    loan3Visible = true;
+    loanCol3.style.display = 'block';
+    loanCols.classList.add('three-cols');
+    addBtn.style.display = 'none';
+  });
+
+  removeBtn.addEventListener('click', function () {
+    loan3Visible = false;
+    loanCol3.style.display = 'none';
+    loanCols.classList.remove('three-cols');
+    addBtn.style.display = 'flex';
+    // Clear loan 3 inputs
+    var inputs = loanCol3.querySelectorAll('input');
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].id === 'loan3-origination') {
+        inputs[i].value = '1.0';
+      } else if (inputs[i].id === 'loan3-annual-fees' || inputs[i].id === 'loan3-closing') {
+        inputs[i].value = '0';
+      } else {
+        inputs[i].value = '';
+      }
+    }
+  });
+
+  // ---- Calculate a single loan ----
+  function calcLoan(prefix) {
+    var name = document.getElementById(prefix + '-name').value || prefix.replace('loan', 'Loan ');
+    var amount = parseNum(document.getElementById(prefix + '-amount').value);
+    var rate = parseNum(document.getElementById(prefix + '-rate').value);
+    var amortYears = parseNum(document.getElementById(prefix + '-amort').value);
+    var termYears = parseNum(document.getElementById(prefix + '-term').value);
+    var originationPct = parseNum(document.getElementById(prefix + '-origination').value);
+    var annualFees = parseNum(document.getElementById(prefix + '-annual-fees').value);
+    var closingCosts = parseNum(document.getElementById(prefix + '-closing').value);
+
+    // Validate required fields
+    if (isNaN(amount) || amount <= 0) return null;
+    if (isNaN(rate) || rate <= 0 || rate > 30) return null;
+    if (isNaN(amortYears) || amortYears <= 0 || amortYears > 50) return null;
+    if (isNaN(termYears) || termYears <= 0) termYears = amortYears;
+    if (isNaN(originationPct) || originationPct < 0) originationPct = 0;
+    if (isNaN(annualFees) || annualFees < 0) annualFees = 0;
+    if (isNaN(closingCosts) || closingCosts < 0) closingCosts = 0;
+
+    var monthlyRate = rate / 100 / 12;
+    var totalAmortMonths = Math.round(amortYears * 12);
+    var totalTermMonths = Math.round(termYears * 12);
+
+    // Monthly P&I payment
+    var monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalAmortMonths)) / (Math.pow(1 + monthlyRate, totalAmortMonths) - 1);
+
+    // Calculate total interest over the term and balloon
+    var balance = amount;
+    var totalInterest = 0;
+    var scheduleMonths = Math.min(totalTermMonths, totalAmortMonths);
+
+    for (var m = 1; m <= scheduleMonths; m++) {
+      var interestPmt = balance * monthlyRate;
+      var principalPmt = monthlyPayment - interestPmt;
+      totalInterest += interestPmt;
+      balance = balance - principalPmt;
+      if (balance < 0.5) balance = 0;
+    }
+
+    var balloonPayment = balance;
+
+    // Origination fee in dollars
+    var originationFee = amount * (originationPct / 100);
+
+    // Total annual fees over the term
+    var totalAnnualFees = annualFees * termYears;
+
+    // Total cost of capital
+    var totalCostOfCapital = totalInterest + originationFee + totalAnnualFees + closingCosts;
+
+    // Effective annual rate
+    // We calculate this by finding the rate that makes the net loan proceeds equal
+    // to the present value of all payments. Using a simplified approach:
+    // Net proceeds = amount - originationFee - closingCosts
+    // Total paid over term = (monthlyPayment * scheduleMonths) + totalAnnualFees
+    // Effective rate approximation using total cost spread over average balance
+    var netProceeds = amount - originationFee - closingCosts;
+    if (netProceeds <= 0) netProceeds = amount; // fallback
+
+    // Newton's method to find effective monthly rate
+    var effMonthlyRate = monthlyRate; // starting guess
+    var totalPeriodicCost = monthlyPayment + (annualFees / 12);
+
+    for (var iter = 0; iter < 100; iter++) {
+      var pv = 0;
+      var dpv = 0;
+      for (var p = 1; p <= scheduleMonths; p++) {
+        var disc = Math.pow(1 + effMonthlyRate, p);
+        pv += totalPeriodicCost / disc;
+        dpv -= p * totalPeriodicCost / (disc * (1 + effMonthlyRate));
+      }
+      // Add balloon payment PV
+      var balloonDisc = Math.pow(1 + effMonthlyRate, scheduleMonths);
+      pv += balloonPayment / balloonDisc;
+      dpv -= scheduleMonths * balloonPayment / (balloonDisc * (1 + effMonthlyRate));
+
+      var diff = pv - netProceeds;
+      if (Math.abs(diff) < 0.01) break;
+      effMonthlyRate = effMonthlyRate - diff / dpv;
+      if (effMonthlyRate <= 0) {
+        effMonthlyRate = monthlyRate;
+        break;
+      }
+    }
+
+    var effectiveAnnualRate = effMonthlyRate * 12 * 100;
+    if (effectiveAnnualRate < 0 || effectiveAnnualRate > 100) effectiveAnnualRate = rate; // fallback
+
+    return {
+      name: name,
+      loanAmount: amount,
+      rate: rate,
+      monthlyPayment: monthlyPayment,
+      totalInterest: totalInterest,
+      totalCostOfCapital: totalCostOfCapital,
+      effectiveAnnualRate: effectiveAnnualRate,
+      balloonPayment: balloonPayment,
+      hasBalloon: totalTermMonths < totalAmortMonths && balloonPayment > 0
+    };
+  }
+
+  // ---- Main comparison ----
+  document.getElementById('calc-btn').addEventListener('click', function () {
+    var loans = [];
+    var loanPrefixes = ['loan1', 'loan2'];
+    if (loan3Visible) loanPrefixes.push('loan3');
+
+    var hasError = false;
+    for (var i = 0; i < loanPrefixes.length; i++) {
+      var result = calcLoan(loanPrefixes[i]);
+      if (result === null) {
+        var loanNum = i + 1;
+        alert('Please fill in all required fields for Loan ' + loanNum + ' (loan amount, interest rate, and amortization period).');
+        hasError = true;
+        break;
+      }
+      loans.push(result);
+    }
+    if (hasError) return;
+
+    // Build comparison table
+    var thead = document.getElementById('comp-thead');
+    var tbody = document.getElementById('comp-tbody');
+    thead.innerHTML = '';
+    tbody.innerHTML = '';
+
+    // Header row
+    var headerRow = '<tr><th>Metric</th>';
+    for (var h = 0; h < loans.length; h++) {
+      headerRow += '<th>' + escapeHtml(loans[h].name) + '</th>';
+    }
+    headerRow += '</tr>';
+    thead.innerHTML = headerRow;
+
+    // Metrics rows
+    var metrics = [
+      { label: 'Loan Amount', key: 'loanAmount', format: 'currency', best: 'none' },
+      { label: 'Stated Rate', key: 'rate', format: 'percent', best: 'lowest' },
+      { label: 'Monthly Payment', key: 'monthlyPayment', format: 'currency', best: 'lowest' },
+      { label: 'Total Interest Over Term', key: 'totalInterest', format: 'currency', best: 'lowest' },
+      { label: 'Total Cost of Capital', key: 'totalCostOfCapital', format: 'currency', best: 'lowest' },
+      { label: 'Effective Annual Rate', key: 'effectiveAnnualRate', format: 'percent', best: 'lowest' },
+      { label: 'Balloon Payment at Maturity', key: 'balloonPayment', format: 'currency', best: 'lowest' }
+    ];
+
+    for (var m = 0; m < metrics.length; m++) {
+      var metric = metrics[m];
+      var values = [];
+      for (var v = 0; v < loans.length; v++) {
+        values.push(loans[v][metric.key]);
+      }
+
+      // Find best (lowest) value index
+      var bestIdx = -1;
+      if (metric.best === 'lowest' && loans.length > 1) {
+        var minVal = Infinity;
+        for (var b = 0; b < values.length; b++) {
+          if (values[b] < minVal) {
+            minVal = values[b];
+            bestIdx = b;
+          }
+        }
+        // Check for ties
+        var tieCount = 0;
+        for (var t = 0; t < values.length; t++) {
+          if (Math.abs(values[t] - minVal) < 0.01) tieCount++;
+        }
+        if (tieCount === values.length) bestIdx = -1; // All the same, no winner
+      }
+
+      var row = '<tr><td>' + metric.label + '</td>';
+      for (var c = 0; c < values.length; c++) {
+        var formatted;
+        if (metric.format === 'currency') {
+          formatted = formatCurrency(values[c]);
+        } else {
+          formatted = formatPercent(values[c]);
+        }
+        var isBest = (c === bestIdx);
+        var cellClass = isBest ? ' class="best-value"' : '';
+        var badge = isBest ? '<span class="best-badge">Best</span>' : '';
+        row += '<td' + cellClass + '>' + formatted + badge + '</td>';
+      }
+      row += '</tr>';
+      tbody.innerHTML += row;
+    }
+
+    // Show results
+    var resultEl = document.getElementById('calc-result');
+    resultEl.classList.add('visible');
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+})();
+</script>
+
+<!-- FAQ Accordion -->
+<script>
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    var answer = this.nextElementSibling;
+    if (!expanded) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = '0';
+    }
+  });
+});
+</script>
+
+<script src="../chatbot.js?v=5"></script>
+</body>
+</html>

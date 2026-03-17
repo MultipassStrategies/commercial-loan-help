@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Defeasance Cost Estimator for Commercial Loans | Commercial Loan Help</title>
+<meta name="description" content="Free defeasance cost estimator for commercial real estate loans. Calculate the estimated cost to defease your CMBS or conduit loan, including securities cost, legal fees, and total expense.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/tools/defeasance-calculator">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Defeasance Cost Estimator for Commercial Loans">
+<meta property="og:description" content="Free defeasance cost estimator for commercial real estate. Enter your loan details to estimate the total cost of defeasing your commercial mortgage.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/tools/defeasance-calculator">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chatbot.css?v=5">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Defeasance Cost Estimator for Commercial Loans",
+  "description": "Free defeasance cost estimator for commercial real estate loans. Calculate the estimated cost of defeasing a CMBS or conduit loan, including securities cost, legal fees, and total expense.",
+  "url": "https://www.commercialloanhelp.com/tools/defeasance-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Commercial Loan Help"
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is defeasance in commercial real estate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Defeasance is a process that allows a borrower to release a property from a commercial mortgage lien (most commonly a CMBS loan) without paying off the loan. Instead of repaying the lender directly, the borrower purchases a portfolio of U.S. Treasury securities that generates cash flows matching the remaining loan payments. These securities are placed in a trust, and the property is released from the mortgage. The loan continues to be serviced by the treasury portfolio until it matures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does defeasance typically cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Defeasance costs vary depending on your loan balance, interest rate, remaining term, and current Treasury rates. The largest cost component is the securities portfolio, which can range from 1% to 15% or more of the loan balance. When Treasury rates are well below your loan rate, the cost is higher because lower-yielding securities require a larger purchase to match your loan payments. Legal and processing fees typically add $25,000 to $75,000 to the total. A defeasance consultant can provide an exact quote based on current market conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between defeasance and yield maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both defeasance and yield maintenance are prepayment mechanisms for commercial loans, but they work differently. Yield maintenance is a prepayment penalty calculated as the present value of the difference between the loan rate and a reference Treasury rate, applied to the remaining payments. Defeasance involves purchasing actual Treasury securities to replace the loan collateral. Yield maintenance results in a cash payment to the lender and the loan is retired. Defeasance keeps the loan in place but releases the property. In many cases, defeasance costs more than yield maintenance, but it is the only option for most CMBS loans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does defeasance make financial sense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Defeasance makes sense when the financial benefit of selling or refinancing the property exceeds the total defeasance cost. Common scenarios include selling a property at a significant profit, refinancing into a much lower rate (when rates have dropped substantially since origination), or repositioning a portfolio. Defeasance is generally more cost-effective when Treasury rates are close to or above your loan interest rate, because the securities portfolio costs less. When Treasury rates are far below your loan rate, defeasance becomes very expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I defease any commercial loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not all commercial loans allow defeasance. Defeasance is most commonly required by CMBS (conduit) loans and some life insurance company loans. Bank loans and credit union loans typically use prepayment penalties or yield maintenance instead. The defeasance provision must be written into the original loan documents. Most CMBS loans have a lockout period (usually 2 years) during which neither prepayment nor defeasance is permitted, followed by a period when defeasance is allowed, and sometimes a short open prepayment window near maturity."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .tool-hero {
+    background: linear-gradient(135deg, var(--clh-brand-deep) 0%, var(--clh-brand-dark) 100%);
+    padding-block: clamp(var(--space-10), 6vw, var(--space-16));
+    text-align: center;
+    color: var(--color-text-inverse);
+  }
+  .tool-hero h1 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+  .tool-hero p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .tool-section-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-brand);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tool-section-label:first-child {
+    margin-top: 0;
+  }
+
+  .tool-input-wrap {
+    position: relative;
+  }
+  .tool-input-wrap .tool-prefix {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap .tool-suffix {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap input.has-prefix {
+    padding-left: var(--space-7);
+  }
+  .tool-input-wrap input.has-suffix {
+    padding-right: var(--space-8);
+  }
+
+  .tool-education {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+  }
+  .tool-education h2 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-10);
+    letter-spacing: -0.02em;
+  }
+  .tool-education h2:first-child {
+    margin-top: 0;
+  }
+  .tool-education p {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+  .tool-education ul {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+  }
+  .tool-education li {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+  .tool-education .formula-highlight {
+    background: var(--clh-gray);
+    border-left: 4px solid var(--clh-accent);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-md);
+    margin-block: var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--clh-brand);
+    text-align: center;
+  }
+  .tool-education .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .info-table th,
+  .info-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .info-table th {
+    font-weight: 700;
+    background: var(--clh-gray);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Cost breakdown styling */
+  .cost-breakdown {
+    margin-top: var(--space-5);
+  }
+  .cost-breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .cost-breakdown-item:last-child {
+    border-bottom: none;
+  }
+  .cost-breakdown-item .cost-label {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+  .cost-breakdown-item .cost-value {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .cost-breakdown-item.cost-total {
+    border-top: 2px solid var(--clh-brand);
+    margin-top: var(--space-2);
+    padding-top: var(--space-4);
+  }
+  .cost-breakdown-item.cost-total .cost-label {
+    font-weight: 800;
+    font-size: var(--text-base);
+    color: var(--clh-brand);
+  }
+  .cost-breakdown-item.cost-total .cost-value {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    color: var(--clh-brand);
+  }
+
+  /* Estimate note callout */
+  .estimate-callout {
+    background: rgba(199, 160, 85, 0.1);
+    border-left: 4px solid var(--clh-accent);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-5);
+  }
+  .estimate-callout .callout-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-accent);
+    margin-bottom: var(--space-2);
+  }
+  .estimate-callout .callout-text {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  /* Comparison callout */
+  .comparison-callout {
+    background: var(--clh-gray);
+    border-left: 4px solid var(--clh-brand);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+  }
+  .comparison-callout .callout-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-brand);
+    margin-bottom: var(--space-2);
+  }
+  .comparison-callout .callout-text {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+</style>
+
+</head>
+<body>
+
+<main>
+
+<!-- NAVIGATION -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Commercial Loan Help home">
+      <img src="../logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../investors.html">Investors</a></li>
+      <li><a href="../small-business.html">Small Business</a></li>
+      <li><a href="../hospitality.html">Hospitality</a></li>
+      <li><a href="../learn.html">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="../match.html" class="btn btn-primary hide-mobile">Find My Loan</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TOOL HERO -->
+<section class="tool-hero">
+  <div class="container">
+    <h1>Defeasance Cost Estimator for Commercial Loans</h1>
+    <p>Estimate the total cost to defease your CMBS or conduit loan, including securities cost, legal fees, and processing expenses.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="tool-container">
+  <div class="tool-card" id="defeasance-calc">
+
+    <div class="tool-section-label">Loan Information</div>
+
+    <div class="tool-input-group">
+      <label for="calc-balance">Current Loan Balance</label>
+      <div class="tool-input-wrap">
+        <span class="tool-prefix">$</span>
+        <input type="text" id="calc-balance" class="has-prefix" placeholder="e.g. 5,000,000" inputmode="decimal" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="tool-input-group">
+      <label for="calc-original">Original Loan Amount</label>
+      <div class="tool-input-wrap">
+        <span class="tool-prefix">$</span>
+        <input type="text" id="calc-original" class="has-prefix" placeholder="e.g. 6,000,000" inputmode="decimal" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="tool-input-group">
+      <label for="calc-rate">Interest Rate on Loan</label>
+      <div class="tool-input-wrap">
+        <input type="text" id="calc-rate" class="has-suffix" placeholder="e.g. 5.75" inputmode="decimal" autocomplete="off">
+        <span class="tool-suffix">%</span>
+      </div>
+    </div>
+
+    <div class="tool-input-group">
+      <label for="calc-remaining">Remaining Term (months)</label>
+      <input type="text" id="calc-remaining" placeholder="e.g. 84" inputmode="decimal" autocomplete="off">
+    </div>
+
+    <div class="tool-section-label">Rate and Payment Details</div>
+
+    <div class="tool-input-group">
+      <label for="calc-treasury">Current Treasury Rate (matching maturity)</label>
+      <div class="tool-input-wrap">
+        <input type="text" id="calc-treasury" class="has-suffix" placeholder="e.g. 4.25" inputmode="decimal" autocomplete="off">
+        <span class="tool-suffix">%</span>
+      </div>
+    </div>
+
+    <div class="tool-input-group">
+      <label for="calc-payment">Monthly Loan Payment (P&amp;I)</label>
+      <div class="tool-input-wrap">
+        <span class="tool-prefix">$</span>
+        <input type="text" id="calc-payment" class="has-prefix" placeholder="e.g. 35,000" inputmode="decimal" autocomplete="off">
+      </div>
+    </div>
+
+    <button class="tool-btn" id="calc-btn">Estimate Defeasance Cost</button>
+
+    <!-- Results -->
+    <div class="tool-result" id="calc-result">
+      <div class="tool-result-label">Estimated Total Defeasance Cost</div>
+      <div class="tool-result-value" id="result-total-cost">$0</div>
+
+      <div class="tool-result-grid">
+        <div class="tool-result-item">
+          <div class="tool-result-label">Cost as % of Loan Balance</div>
+          <div class="tool-result-value" id="result-pct">0%</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Estimated Securities Cost</div>
+          <div class="tool-result-value" id="result-securities">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Legal and Processing Fees (est.)</div>
+          <div class="tool-result-value" id="result-legal">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Rate Differential (Loan vs. Treasury)</div>
+          <div class="tool-result-value" id="result-spread">0%</div>
+        </div>
+      </div>
+
+      <div class="cost-breakdown">
+        <div class="tool-section-label">Cost Breakdown</div>
+        <div class="cost-breakdown-item">
+          <span class="cost-label">Present Value of Remaining Payments (at Treasury Rate)</span>
+          <span class="cost-value" id="breakdown-pv">$0</span>
+        </div>
+        <div class="cost-breakdown-item">
+          <span class="cost-label">Minus: Current Loan Balance</span>
+          <span class="cost-value" id="breakdown-balance">$0</span>
+        </div>
+        <div class="cost-breakdown-item">
+          <span class="cost-label">Securities Premium (Difference)</span>
+          <span class="cost-value" id="breakdown-premium">$0</span>
+        </div>
+        <div class="cost-breakdown-item">
+          <span class="cost-label">Estimated Legal / Processing Fees</span>
+          <span class="cost-value" id="breakdown-legal">$0</span>
+        </div>
+        <div class="cost-breakdown-item cost-total">
+          <span class="cost-label">Total Estimated Defeasance Cost</span>
+          <span class="cost-value" id="breakdown-total">$0</span>
+        </div>
+      </div>
+
+      <div class="estimate-callout">
+        <div class="callout-label">Important: This Is an Estimate</div>
+        <div class="callout-text">Actual defeasance costs require a formal quote from a defeasance consultant. The securities portfolio must be precisely matched to your remaining loan payments, and Treasury prices fluctuate daily. This calculator provides a ballpark estimate to help you evaluate whether defeasance makes sense for your situation.</div>
+      </div>
+
+      <div class="comparison-callout">
+        <div class="callout-label">Defeasance vs. Yield Maintenance</div>
+        <div class="callout-text" id="comparison-text">If your loan allows yield maintenance instead of defeasance, the yield maintenance penalty is typically lower because it is a cash payment calculated as the present value of the rate differential. Defeasance requires purchasing actual securities, which includes transaction costs, legal fees, and potential pricing inefficiencies. However, most CMBS loans require defeasance and do not offer yield maintenance as an alternative.</div>
+      </div>
+    </div>
+
+    <p class="tool-disclaimer">This calculator provides estimates for educational purposes only. Actual defeasance costs require a formal quote from a qualified defeasance consultant. Treasury rates and securities prices change daily. This is not a commitment to lend.</p>
+  </div>
+</section>
+
+<!-- EDUCATIONAL CONTENT -->
+<section class="tool-education">
+
+  <h2>How Defeasance Works</h2>
+  <p>Defeasance is a mechanism that allows commercial real estate borrowers to release their property from a mortgage lien without paying off the loan early. It is most commonly associated with CMBS (commercial mortgage-backed securities) loans, where traditional prepayment is either prohibited or heavily restricted.</p>
+  <p>The process works by substituting the collateral securing the loan. Instead of the property backing the mortgage, the borrower purchases a portfolio of U.S. government securities (typically Treasury bonds and STRIPS) that produce cash flows matching the remaining scheduled loan payments. These securities are placed in a successor borrower entity, and the original property is released from the lien. The loan itself continues to exist and is serviced by the securities until maturity.</p>
+  <p>Because the government securities carry the full faith and credit of the United States, investors in the CMBS trust receive the same payment stream they would have received from the original loan. This is why defeasance is permitted under CMBS loan documents: the investor is made whole.</p>
+
+  <h2>Understanding the Cost Components</h2>
+  <p>Defeasance costs are made up of several components. The largest, by far, is the securities portfolio.</p>
+  <div class="formula-highlight">Securities Cost = Present Value of Remaining Payments (at Treasury Rate) minus Loan Balance</div>
+  <p>The key driver of defeasance cost is the spread between your loan interest rate and current Treasury yields for matching maturities. When Treasury rates are significantly below your loan rate, the securities portfolio costs more because lower-yielding Treasuries need a larger principal amount to generate the same cash flows as your higher-rate loan payments. Conversely, when Treasury rates are close to or above your loan rate, the securities cost drops dramatically.</p>
+
+  <ul>
+    <li><strong>Securities Portfolio:</strong> This is the cost to purchase U.S. Treasury securities whose cash flows match your remaining loan payments. This is typically the largest line item, ranging from 1% to 15% (or more) of the loan balance depending on the rate environment.</li>
+    <li><strong>Legal Fees:</strong> A law firm must review the loan documents, prepare the successor borrower entity, and coordinate the closing. Legal fees typically range from $25,000 to $50,000.</li>
+    <li><strong>Defeasance Consultant Fee:</strong> A specialized consultant structures the securities portfolio, coordinates with the servicer, and manages the process. Fees range from $10,000 to $25,000.</li>
+    <li><strong>Servicer and Rating Agency Fees:</strong> The loan servicer charges a processing fee (typically $5,000 to $15,000), and in some cases, rating agency confirmation may be required.</li>
+    <li><strong>Accountant Fees:</strong> An independent accountant may be required to verify the cash flow matching. This typically costs $2,000 to $5,000.</li>
+  </ul>
+  <p>For this calculator, we group the non-securities costs into an estimated legal and processing fee range of $25,000 to $75,000. The exact amount depends on the complexity of your loan and the number of parties involved.</p>
+
+  <h2>When Defeasance Makes Sense</h2>
+  <p>Defeasance is a significant expense, so it only makes financial sense in certain situations. The most common scenarios include:</p>
+  <ul>
+    <li><strong>Selling the property at a large profit:</strong> If you have a buyer willing to pay a price that more than covers the defeasance cost, the transaction can still be highly profitable.</li>
+    <li><strong>Refinancing to a much lower rate:</strong> If interest rates have dropped substantially since origination, the savings from a new lower-rate loan may justify the upfront defeasance expense over the remaining term.</li>
+    <li><strong>Portfolio repositioning:</strong> Institutional investors may need to sell properties to rebalance their holdings, and defeasance is simply a cost of doing business.</li>
+    <li><strong>Treasury rates near or above the loan rate:</strong> When this happens, defeasance becomes much cheaper because the securities portfolio costs less. This creates windows of opportunity for borrowers who have been waiting to sell or refinance.</li>
+  </ul>
+
+  <h2>Defeasance vs. Yield Maintenance: A Comparison</h2>
+  <p>Both defeasance and yield maintenance serve the same purpose: they compensate the lender (or investors) for the loss of future interest income when a borrower wants to exit a loan early. However, they work very differently in practice.</p>
+
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Defeasance</th>
+        <th>Yield Maintenance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>How It Works</td>
+        <td>Purchase securities to replace collateral</td>
+        <td>Pay a cash penalty to the lender</td>
+      </tr>
+      <tr>
+        <td>Loan Status After</td>
+        <td>Loan continues (serviced by securities)</td>
+        <td>Loan is fully retired</td>
+      </tr>
+      <tr>
+        <td>Typical Loan Types</td>
+        <td>CMBS, some life company loans</td>
+        <td>Bank loans, life company loans, agency loans</td>
+      </tr>
+      <tr>
+        <td>Typical Cost</td>
+        <td>Higher (securities + legal + processing)</td>
+        <td>Lower (cash payment only)</td>
+      </tr>
+      <tr>
+        <td>Timeline</td>
+        <td>30 to 90 days</td>
+        <td>Typically faster (days to weeks)</td>
+      </tr>
+      <tr>
+        <td>Complexity</td>
+        <td>High (multiple parties, legal entities)</td>
+        <td>Lower (calculation and payment)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>If your loan gives you the choice between defeasance and yield maintenance, yield maintenance is almost always the less expensive option. However, most CMBS loans require defeasance because the loan cannot simply be paid off early; it must continue performing for the benefit of the bondholders in the securitization trust.</p>
+
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container" style="max-width: 760px;">
+    <h2 style="text-align: center; font-size: var(--text-xl); font-weight: 800; margin-bottom: var(--space-8);">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-defease-1">
+          <span>What is defeasance in commercial real estate?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-defease-1" role="region">
+          <div class="faq-answer-inner">
+            <p>Defeasance is a process that allows a borrower to release a property from a commercial mortgage lien (most commonly a CMBS loan) without paying off the loan. Instead of repaying the lender directly, the borrower purchases a portfolio of U.S. Treasury securities that generates cash flows matching the remaining loan payments. These securities are placed in a trust, and the property is released from the mortgage. The loan continues to be serviced by the treasury portfolio until it matures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-defease-2">
+          <span>How much does defeasance typically cost?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-defease-2" role="region">
+          <div class="faq-answer-inner">
+            <p>Defeasance costs vary depending on your loan balance, interest rate, remaining term, and current Treasury rates. The largest cost component is the securities portfolio, which can range from 1% to 15% or more of the loan balance. When Treasury rates are well below your loan rate, the cost is higher because lower-yielding securities require a larger purchase to match your loan payments. Legal and processing fees typically add $25,000 to $75,000 to the total. A defeasance consultant can provide an exact quote based on current market conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-defease-3">
+          <span>What is the difference between defeasance and yield maintenance?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-defease-3" role="region">
+          <div class="faq-answer-inner">
+            <p>Both defeasance and yield maintenance are prepayment mechanisms for commercial loans, but they work differently. Yield maintenance is a prepayment penalty calculated as the present value of the difference between the loan rate and a reference Treasury rate, applied to the remaining payments. Defeasance involves purchasing actual Treasury securities to replace the loan collateral. Yield maintenance results in a cash payment to the lender and the loan is retired. Defeasance keeps the loan in place but releases the property. In many cases, defeasance costs more than yield maintenance, but it is the only option for most CMBS loans.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-defease-4">
+          <span>When does defeasance make financial sense?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-defease-4" role="region">
+          <div class="faq-answer-inner">
+            <p>Defeasance makes sense when the financial benefit of selling or refinancing the property exceeds the total defeasance cost. Common scenarios include selling a property at a significant profit, refinancing into a much lower rate (when rates have dropped substantially since origination), or repositioning a portfolio. Defeasance is generally more cost-effective when Treasury rates are close to or above your loan interest rate, because the securities portfolio costs less. When Treasury rates are far below your loan rate, defeasance becomes very expensive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-defease-5">
+          <span>Can I defease any commercial loan?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-defease-5" role="region">
+          <div class="faq-answer-inner">
+            <p>Not all commercial loans allow defeasance. Defeasance is most commonly required by CMBS (conduit) loans and some life insurance company loans. Bank loans and credit union loans typically use prepayment penalties or yield maintenance instead. The defeasance provision must be written into the original loan documents. Most CMBS loans have a lockout period (usually 2 years) during which neither prepayment nor defeasance is permitted, followed by a period when defeasance is allowed, and sometimes a short open prepayment window near maturity.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Need to Refinance After Defeasance? We Can Help.</h2>
+    <p>Tell us about your property in 60 seconds. We will match you to lenders who can provide the best replacement financing after your defeasance closes. No credit pull. No commitment. No cost.</p>
+    <a href="../match.html" class="btn btn-white btn-lg">Find My Loan Options</a>
+    <p class="cta-trust-line">Hundreds of lender relationships. All loan types. Nationwide. Licensed in all 50 states.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender: fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="../loans.html">All Loan Products</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="../loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="../loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="../loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="../investors.html">Real Estate Investors</a></li>
+          <li><a href="../small-business.html">Small Business Owners</a></li>
+          <li><a href="../hospitality.html">Hospitality Operators</a></li>
+          <li><a href="../match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="../learn.html">Education Hub</a></li>
+          <li><a href="../articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="../articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="../articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="../about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS -->
+<script src="../app.js"></script>
+
+<!-- Defeasance Calculator Logic -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Helpers ----
+  function parseNum(str) {
+    if (!str) return NaN;
+    return parseFloat(str.replace(/[^0-9.\-]/g, ''));
+  }
+
+  function formatCurrency(n) {
+    if (isNaN(n) || !isFinite(n)) return '$0';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function formatInput(input) {
+    var raw = input.value.replace(/[^0-9.]/g, '');
+    var parts = raw.split('.');
+    if (parts[0]) {
+      parts[0] = parseInt(parts[0], 10).toLocaleString('en-US');
+    }
+    input.value = parts.length > 1 ? parts[0] + '.' + parts[1] : parts[0];
+  }
+
+  // ---- Auto-format currency inputs ----
+  var currencyInputs = ['calc-balance', 'calc-original', 'calc-payment'];
+  currencyInputs.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('blur', function () { formatInput(el); });
+    }
+  });
+
+  // ---- Estimate legal/processing fees based on loan balance ----
+  function estimateLegalFees(balance) {
+    // Scale fees based on loan size: $25K for small loans, up to $75K for large loans
+    if (balance <= 1000000) return 25000;
+    if (balance >= 20000000) return 75000;
+    // Linear interpolation between $25K and $75K for balances between $1M and $20M
+    return 25000 + (balance - 1000000) / (20000000 - 1000000) * 50000;
+  }
+
+  // ---- Main calculation ----
+  document.getElementById('calc-btn').addEventListener('click', function () {
+    var balance = parseNum(document.getElementById('calc-balance').value);
+    var originalAmount = parseNum(document.getElementById('calc-original').value);
+    var loanRate = parseNum(document.getElementById('calc-rate').value);
+    var remainingMonths = parseNum(document.getElementById('calc-remaining').value);
+    var treasuryRate = parseNum(document.getElementById('calc-treasury').value);
+    var monthlyPayment = parseNum(document.getElementById('calc-payment').value);
+
+    // Validation
+    if (isNaN(balance) || balance <= 0) {
+      alert('Please enter your current loan balance.');
+      return;
+    }
+    if (isNaN(originalAmount) || originalAmount <= 0) {
+      alert('Please enter the original loan amount.');
+      return;
+    }
+    if (isNaN(loanRate) || loanRate <= 0 || loanRate > 30) {
+      alert('Please enter a valid loan interest rate.');
+      return;
+    }
+    if (isNaN(remainingMonths) || remainingMonths <= 0 || remainingMonths > 360) {
+      alert('Please enter a valid remaining term (1 to 360 months).');
+      return;
+    }
+    if (isNaN(treasuryRate) || treasuryRate < 0 || treasuryRate > 20) {
+      alert('Please enter a valid current Treasury rate.');
+      return;
+    }
+    if (isNaN(monthlyPayment) || monthlyPayment <= 0) {
+      alert('Please enter your monthly loan payment (principal and interest).');
+      return;
+    }
+
+    remainingMonths = Math.round(remainingMonths);
+
+    // Calculate present value of remaining payments at the Treasury rate
+    // PV = sum of [payment / (1 + treasuryMonthly)^i] for i = 1 to remainingMonths
+    var treasuryMonthly = treasuryRate / 100 / 12;
+    var pvPayments = 0;
+
+    if (treasuryMonthly > 0) {
+      // PV of annuity formula: PMT * [(1 - (1+r)^-n) / r]
+      pvPayments = monthlyPayment * (1 - Math.pow(1 + treasuryMonthly, -remainingMonths)) / treasuryMonthly;
+    } else {
+      // If treasury rate is 0, PV is simply payments times months
+      pvPayments = monthlyPayment * remainingMonths;
+    }
+
+    // Securities cost is the PV of payments minus the current loan balance
+    // This represents the premium needed because Treasury yields are lower than the loan rate
+    var securitiesCost = pvPayments - balance;
+    if (securitiesCost < 0) securitiesCost = 0;
+
+    // Estimate legal and processing fees
+    var legalFees = estimateLegalFees(balance);
+    legalFees = Math.round(legalFees / 1000) * 1000; // round to nearest $1K
+
+    // Total defeasance cost
+    var totalCost = securitiesCost + legalFees;
+
+    // Cost as percentage of loan balance
+    var costPct = (totalCost / balance) * 100;
+
+    // Rate differential
+    var rateSpread = loanRate - treasuryRate;
+
+    // Display results
+    var resultEl = document.getElementById('calc-result');
+    resultEl.classList.add('visible');
+
+    document.getElementById('result-total-cost').textContent = formatCurrency(totalCost);
+    document.getElementById('result-pct').textContent = costPct.toFixed(2) + '%';
+    document.getElementById('result-securities').textContent = formatCurrency(securitiesCost);
+    document.getElementById('result-legal').textContent = formatCurrency(legalFees);
+    document.getElementById('result-spread').textContent = rateSpread.toFixed(2) + '%';
+
+    // Breakdown
+    document.getElementById('breakdown-pv').textContent = formatCurrency(pvPayments);
+    document.getElementById('breakdown-balance').textContent = '(' + formatCurrency(balance) + ')';
+    document.getElementById('breakdown-premium').textContent = formatCurrency(securitiesCost);
+    document.getElementById('breakdown-legal').textContent = formatCurrency(legalFees);
+    document.getElementById('breakdown-total').textContent = formatCurrency(totalCost);
+
+    // Update comparison text based on results
+    var compText = document.getElementById('comparison-text');
+    if (rateSpread <= 0) {
+      compText.textContent = 'Good news: Treasury rates are currently at or above your loan rate. This means the securities portfolio cost is minimal. In this rate environment, defeasance is relatively inexpensive compared to historical norms. If you have been waiting for the right time to sell or refinance, this may be a favorable window.';
+    } else if (rateSpread < 1.0) {
+      compText.textContent = 'The spread between your loan rate and current Treasury rates is modest (' + rateSpread.toFixed(2) + '%). This keeps the securities cost manageable. For comparison, a yield maintenance penalty on a similar loan would likely be somewhat lower, but most CMBS loans require defeasance rather than yield maintenance.';
+    } else if (rateSpread < 2.0) {
+      compText.textContent = 'The spread between your loan rate and current Treasury rates is ' + rateSpread.toFixed(2) + '%, which results in a meaningful securities premium. If your loan offered yield maintenance instead, the cost would typically be lower. Consider whether the financial benefit of your planned transaction justifies this expense.';
+    } else {
+      compText.textContent = 'The spread between your loan rate and current Treasury rates is significant (' + rateSpread.toFixed(2) + '%), resulting in a substantial securities premium. In this rate environment, defeasance is expensive. If possible, consider waiting for Treasury rates to rise closer to your loan rate, which would reduce the cost. Alternatively, if your loan allows yield maintenance, that would typically be a less costly option.';
+    }
+
+    // Smooth scroll to results
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
+
+<!-- FAQ Accordion -->
+<script>
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    var answer = this.nextElementSibling;
+    if (!expanded) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = '0';
+    }
+  });
+});
+</script>
+
+<script src="../chatbot.js?v=5"></script>
+</body>
+</html>

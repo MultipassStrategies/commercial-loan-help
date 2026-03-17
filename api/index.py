@@ -505,6 +505,120 @@ From top (lowest risk, first repaid) to bottom (highest risk, last repaid):
 - Bank: lower cost, stricter underwriting, slower, regulatory constraints
 - Non-bank: higher cost, flexible underwriting, faster, no regulatory constraints
 - Bank when you qualify. Non-bank when you need speed, flexibility, or do not fit bank criteria.
+
+## SPECIALTY PROPERTY TYPES
+
+### Gas Station / Convenience Store Loans
+- Loan range: $500K-$10M. SBA 504 and 7(a) are popular options.
+- Environmental concerns are critical: Phase I (and often Phase II) Environmental Site Assessments are required.
+- Branded vs unbranded: branded stations may get better terms due to franchise backing.
+- Income underwriting includes fuel margins plus c-store revenue.
+
+### Hotel / Hospitality Loans
+- Loan range: $1M-$100M+. Options include SBA, CMBS, agency (limited), and conventional.
+- Flagged (branded) hotels generally get better financing terms than independent properties.
+- Key metrics: RevPAR (Revenue Per Available Room), ADR (Average Daily Rate), occupancy.
+- Franchise agreement and PIP (Property Improvement Plan) requirements affect deal structure.
+
+### Self-Storage Facility Loans
+- Loan range: $500K-$20M. Conventional, SBA, CMBS for larger facilities.
+- Key metrics: price per square foot, occupancy stabilization timeline, climate-controlled premium.
+- Value-add: converting to climate-controlled, adding RV/boat storage, operational improvements.
+
+### Senior Housing / Assisted Living Loans
+- Loan range: $2M-$50M+. HUD 232, Fannie Mae, Freddie Mac, and conventional.
+- Property subtypes: independent living, assisted living, memory care, skilled nursing.
+- Licensing and regulatory compliance significantly impact financing.
+
+### Medical Office Building Loans
+- Loan range: $1M-$30M. SBA for owner-occupied, conventional for investment.
+- Tenant credit matters: healthcare system tenants are preferred over solo practitioners.
+- Specialized buildout costs can be significant.
+
+### Cannabis Real Estate Loans
+- Federal illegality prevents bank/SBA lending. Private lenders and sale-leaseback structures dominate.
+- Higher rates (typically 12-18%) and lower LTV (50-65%) reflect regulatory risk.
+- Facility types: cultivation, processing, dispensary, distribution.
+
+### Restaurant Real Estate Loans
+- SBA 504 and 7(a) are common for owner-occupied restaurants.
+- Franchise restaurants may get preferential terms.
+- Lenders evaluate food cost ratios, operator experience, and market conditions.
+
+### Car Wash Facility Loans
+- SBA available for construction and acquisition. Loan range: $500K-$10M.
+- Express tunnel, full-service, and self-serve have different economics.
+- Membership/subscription revenue models are increasingly preferred by lenders.
+
+### Auto Dealership Loans
+- Loan range: $2M-$30M. Floor plan financing is separate from real estate loans.
+- OEM image compliance requirements can drive renovation costs.
+- Blue sky value (goodwill above tangible assets) is a key acquisition metric.
+
+### Manufactured Housing Community (MHC) Loans
+- Loan range: $1M-$50M+. Fannie Mae and Freddie Mac have dedicated MHC programs.
+- Key metrics: lot rent, pad occupancy, tenant-owned vs park-owned homes.
+- Value-add: utility billing, infill development, amenity upgrades.
+
+## ADDITIONAL LENDING CONCEPTS
+
+### Recourse vs Non-Recourse
+- Recourse: lender can pursue borrower's personal assets in default. Common in bank, SBA, most bridge loans.
+- Non-recourse: lender's remedy limited to the collateral property. Common in CMBS, agency, life company loans.
+- Non-recourse loans include "bad boy" carve-outs that trigger full recourse for fraud, voluntary bankruptcy, or misappropriation.
+
+### Bad Boy Carve-Outs
+- Provisions in non-recourse loans that convert to full recourse if borrower commits prohibited acts.
+- Common triggers: fraud, voluntary bankruptcy, misappropriation of funds, unauthorized property transfers, environmental violations.
+- A guarantor (usually the sponsor) signs these carve-outs.
+
+### Personal Guaranty
+- Full guaranty: guarantor liable for entire loan amount. Limited guaranty: capped at a specific amount or percentage.
+- Completion guaranty: common in construction loans, requires project to be finished.
+- Burnoff provisions: guaranty reduces over time as loan is repaid or conditions are met.
+
+### Capital Stack
+- Layers from lowest risk to highest: senior debt (first lien), subordinate/mezzanine debt, preferred equity, common equity.
+- Each layer is priced based on risk. Senior debt: lowest cost, first claim. Common equity: highest return potential, last claim.
+- Intercreditor agreements govern the relationship between layers.
+
+### SOFR and Floating Rate Loans
+- SOFR (Secured Overnight Financing Rate) replaced LIBOR as the benchmark for floating rate commercial loans.
+- Structure: SOFR + spread (e.g., SOFR + 250 basis points).
+- Rate caps are typically required by lenders on floating rate loans to limit borrower exposure.
+
+### Amortization and Balloon Payments
+- Most commercial loans amortize over 20-30 years but have a shorter loan term (5-10 years).
+- At maturity, the remaining balance (balloon payment) must be paid, typically through refinancing.
+- Interest-only periods (1-5 years) reduce initial payments but increase the balloon.
+
+### Prepayment Penalties
+- Yield maintenance: present value calculation based on Treasury rates. Cost varies with rate environment.
+- Defeasance: replacing loan collateral with Treasury securities. Common in CMBS. Requires a consultant.
+- Step-down: declining percentage (e.g., 5-4-3-2-1% over 5 years). Most borrower-friendly.
+- Lockout: no prepayment allowed for a set period.
+
+### Lease Types (Impact on Underwriting)
+- NNN (Triple Net): tenant pays taxes, insurance, maintenance. Most predictable NOI for lenders.
+- Gross Lease: landlord pays all expenses. Higher gross rent but more expense risk.
+- Modified Gross: shared expense responsibility. Common in office and medical office.
+
+### Building Classes
+- Class A: premium location, newest construction, top amenities, lowest cap rates, best financing terms.
+- Class B: good quality, older but maintained, value-add potential, moderate cap rates.
+- Class C: older, functional, lowest rents, highest cap rates, may face financing challenges.
+
+## CALCULATORS AND TOOLS AVAILABLE ON OUR SITE
+- DSCR Calculator: calculate your Debt Service Coverage Ratio
+- Commercial Mortgage Calculator: estimate monthly payments
+- Debt Yield Calculator: NOI divided by loan amount
+- LTV Calculator: loan amount divided by property value
+- Cap Rate Calculator: NOI divided by property value
+- Amortization Schedule Calculator: full payment schedule with balloon
+- Defeasance Cost Estimator: estimate CMBS defeasance costs
+- SBA 7(a) vs 504 Eligibility Tool: find the right SBA program
+- Loan Comparison Tool: compare up to 3 loan offers side by side
+- Interest Reserve Calculator: estimate construction loan interest reserve
 """
 
 SYSTEM_PROMPT = """You are the Commercial Loan Help AI Assistant, a knowledgeable and helpful guide for anyone navigating commercial lending.
