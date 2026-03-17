@@ -329,9 +329,8 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        """Health check."""
+        """Health check — only responds at /api path."""
         self.send_response(200)
-        self.send_header("Content-Type", "application/json")
-        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Content-Type", "text/plain")
         self.end_headers()
-        self.wfile.write(json.dumps({"status": "ok", "service": "clh-chatbot"}).encode())
+        self.wfile.write(b"CLH Chatbot API is running.")
