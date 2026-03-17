@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Cap Rate Calculator: Evaluate Your Commercial Property Investment | Commercial Loan Help</title>
+<meta name="description" content="Free cap rate calculator for commercial real estate. Enter your NOI and property value to instantly see the capitalization rate and evaluate your investment.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/tools/cap-rate-calculator">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cap Rate Calculator: Evaluate Your Commercial Property Investment">
+<meta property="og:description" content="Free cap rate calculator for commercial real estate. Enter your NOI and property value to instantly see the capitalization rate and evaluate your investment.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/tools/cap-rate-calculator">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chatbot.css?v=5">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cap Rate Calculator",
+  "description": "Free capitalization rate calculator for commercial real estate investors and borrowers.",
+  "url": "https://www.commercialloanhelp.com/tools/cap-rate-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Commercial Loan Help"
+  }
+}
+</script>
+
+<style>
+  /* Tool-hero: extends page-hero with tool-specific tweaks */
+  .tool-hero {
+    background: linear-gradient(135deg, var(--clh-brand-deep) 0%, var(--clh-brand-dark) 100%);
+    padding-block: clamp(var(--space-10), 6vw, var(--space-16));
+    text-align: center;
+    color: var(--color-text-inverse);
+  }
+  .tool-hero h1 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+  .tool-hero p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  /* Mode toggle */
+  .tool-toggle {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+    background: var(--clh-gray);
+    border-radius: var(--radius-md);
+    padding: var(--space-1);
+  }
+  .tool-toggle button {
+    flex: 1;
+    padding: var(--space-2) var(--space-4);
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tool-toggle button.active {
+    background: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  /* Cap rate gauge */
+  .tool-gauge {
+    margin-top: var(--space-5);
+  }
+  .tool-gauge-bar {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #4a90d9 0%, #4a90d9 20%, #28a745 20%, #28a745 50%, #f0ad4e 50%, #f0ad4e 75%, #dc3545 75%, #dc3545 100%);
+    position: relative;
+    overflow: visible;
+  }
+  .tool-gauge-marker {
+    position: absolute;
+    top: -6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--clh-brand);
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .tool-gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    opacity: 0.7;
+  }
+  .tool-interpretation {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--text-sm);
+  }
+  .tool-interpretation.strong {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+  }
+  .tool-interpretation.adequate {
+    background: rgba(240, 173, 78, 0.15);
+    color: #d4940a;
+  }
+  .tool-interpretation.weak {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+  }
+
+  /* Section label inside tool card */
+  .tool-section-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-brand);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tool-section-label:first-child {
+    margin-top: 0;
+  }
+
+  /* Input prefix/suffix */
+  .tool-input-wrap {
+    position: relative;
+  }
+  .tool-input-wrap .tool-prefix {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap .tool-suffix {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap input.has-prefix {
+    padding-left: var(--space-7);
+  }
+  .tool-input-wrap input.has-suffix {
+    padding-right: var(--space-8);
+  }
+
+  /* Educational content styling */
+  .tool-education {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+  }
+  .tool-education h2 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-10);
+    letter-spacing: -0.02em;
+  }
+  .tool-education h2:first-child {
+    margin-top: 0;
+  }
+  .tool-education p {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+  .tool-education ul {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+  }
+  .tool-education li {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+  .tool-education .formula-highlight {
+    background: var(--clh-gray);
+    border-left: 4px solid var(--clh-accent);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-md);
+    margin-block: var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--clh-brand);
+    text-align: center;
+  }
+  .tool-education .dscr-tier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .dscr-tier-table th,
+  .dscr-tier-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .dscr-tier-table th {
+    font-weight: 700;
+    background: var(--clh-gray);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .dscr-tier-table .status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: var(--space-2);
+    vertical-align: middle;
+  }
+</style>
+
+</head>
+<body>
+
+<main>
+
+<!-- ====================================================================
+     NAVIGATION
+     ==================================================================== -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Commercial Loan Help home">
+      <img src="../logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../investors.html">Investors</a></li>
+      <li><a href="../small-business.html">Small Business</a></li>
+      <li><a href="../hospitality.html">Hospitality</a></li>
+      <li><a href="../learn.html">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="../match.html" class="btn btn-primary hide-mobile">Find My Loan</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====================================================================
+     TOOL HERO
+     ==================================================================== -->
+<section class="tool-hero">
+  <div class="container">
+    <h1>Cap Rate Calculator: Evaluate Your Commercial Property Investment</h1>
+    <p>Enter your property's net operating income and value to instantly calculate the capitalization rate and evaluate your investment returns.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CALCULATOR
+     ==================================================================== -->
+<section class="tool-container">
+  <div class="tool-card" id="caprate-calc">
+
+    <!-- Mode Toggle -->
+    <div class="tool-toggle" id="mode-toggle">
+      <button class="active" data-mode="caprate">Calculate Cap Rate</button>
+      <button data-mode="value">Calculate Property Value</button>
+    </div>
+
+    <!-- Mode 1: Calculate Cap Rate -->
+    <div id="mode-caprate-inputs">
+      <div class="tool-section-label">Property Details</div>
+
+      <div class="tool-input-group">
+        <label for="calc-noi">Net Operating Income (Annual)</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-noi" class="has-prefix" placeholder="e.g. 250,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="tool-input-group">
+        <label for="calc-property-value">Property Value (or Purchase Price)</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-property-value" class="has-prefix" placeholder="e.g. 3,500,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode 2: Calculate Property Value -->
+    <div id="mode-value-inputs" style="display: none;">
+      <div class="tool-section-label">Property Details</div>
+
+      <div class="tool-input-group">
+        <label for="calc-noi-2">Net Operating Income (Annual)</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-noi-2" class="has-prefix" placeholder="e.g. 250,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="tool-input-group">
+        <label for="calc-target-cap">Target Cap Rate (%)</label>
+        <div class="tool-input-wrap">
+          <input type="text" id="calc-target-cap" class="has-suffix" placeholder="e.g. 7.0" inputmode="decimal" autocomplete="off">
+          <span class="tool-suffix">%</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="tool-btn" id="calc-btn">Calculate Cap Rate</button>
+
+    <!-- Results -->
+    <div class="tool-result" id="calc-result">
+      <div class="tool-result-label" id="result-label">Cap Rate</div>
+      <div class="tool-result-value" id="result-caprate">0.00%</div>
+
+      <div class="tool-gauge">
+        <div class="tool-gauge-bar">
+          <div class="tool-gauge-marker" id="gauge-marker" style="left: 50%;"></div>
+        </div>
+        <div class="tool-gauge-labels">
+          <span>2%</span>
+          <span>5%</span>
+          <span>7%</span>
+          <span>10%+</span>
+        </div>
+      </div>
+
+      <div class="tool-interpretation" id="result-interpretation"></div>
+
+      <div class="tool-result-grid">
+        <div class="tool-result-item" id="result-primary-item">
+          <div class="tool-result-label">Cap Rate</div>
+          <div class="tool-result-value" id="result-primary">0.00%</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Net Operating Income</div>
+          <div class="tool-result-value" id="result-noi">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Implied Value at 5% Cap</div>
+          <div class="tool-result-value" id="result-val-5">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Implied Value at 6% Cap</div>
+          <div class="tool-result-value" id="result-val-6">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Implied Value at 7% Cap</div>
+          <div class="tool-result-value" id="result-val-7">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Implied Value at 8% Cap</div>
+          <div class="tool-result-value" id="result-val-8">$0</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="tool-disclaimer">This calculator provides estimates for educational purposes only. Actual market cap rates, property values, and investment returns may vary. This is not financial or investment advice.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     EDUCATIONAL CONTENT
+     ==================================================================== -->
+<section class="tool-education">
+
+  <h2>What Is Cap Rate?</h2>
+  <p>Capitalization rate (cap rate) is the most widely used metric for evaluating commercial real estate investments. It measures the relationship between a property's net operating income and its value, expressed as a percentage.</p>
+  <div class="formula-highlight">Cap Rate = Net Operating Income / Property Value x 100</div>
+  <p>For example, a property generating $250,000 in annual NOI with a purchase price of $3,500,000 has a cap rate of 7.14%. Cap rate tells you the unleveraged yield on the property: the return you would earn if you paid all cash. It does not account for financing costs, which is why investors also look at cash-on-cash return and leveraged IRR for a complete picture.</p>
+  <p>Cap rate is also used to estimate property value. If you know the NOI and the market cap rate for similar properties, you can divide NOI by the cap rate to find the implied value.</p>
+
+  <h2>Cap Rates by Property Type</h2>
+  <p>Cap rates vary significantly by property type, reflecting differences in risk, income stability, and growth potential. The table below shows typical ranges for 2025 and 2026.</p>
+
+  <table class="dscr-tier-table">
+    <thead>
+      <tr>
+        <th>Property Type</th>
+        <th>Typical Cap Rate Range (2025-2026)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Multifamily (Class A)</td>
+        <td>4.5% to 5.5%</td>
+        <td>Lowest cap rates due to strong demand and stable tenancy</td>
+      </tr>
+      <tr>
+        <td>Multifamily (Class B/C)</td>
+        <td>5.5% to 7.5%</td>
+        <td>Higher yield; often targets for value-add strategies</td>
+      </tr>
+      <tr>
+        <td>Industrial / Warehouse</td>
+        <td>5.0% to 7.0%</td>
+        <td>Strong fundamentals driven by e-commerce and logistics</td>
+      </tr>
+      <tr>
+        <td>Retail (Anchored)</td>
+        <td>6.0% to 8.0%</td>
+        <td>Credit tenant anchored centers trade at lower caps</td>
+      </tr>
+      <tr>
+        <td>Retail (Unanchored)</td>
+        <td>7.0% to 9.5%</td>
+        <td>Higher risk from tenant turnover and e-commerce pressure</td>
+      </tr>
+      <tr>
+        <td>Office (Class A)</td>
+        <td>6.0% to 8.0%</td>
+        <td>Elevated uncertainty from remote work trends</td>
+      </tr>
+      <tr>
+        <td>Office (Class B/C)</td>
+        <td>7.5% to 10.0%+</td>
+        <td>Significant repricing since 2022; high variability</td>
+      </tr>
+      <tr>
+        <td>Hospitality</td>
+        <td>7.0% to 10.0%</td>
+        <td>Volatile income streams; cap rates reflect operational risk</td>
+      </tr>
+      <tr>
+        <td>Self-Storage</td>
+        <td>5.5% to 7.5%</td>
+        <td>Recession-resistant; growing investor demand</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Cap Rate Compression and Expansion</h2>
+  <p>Cap rates move inversely to property values. When cap rates compress (go down), property values increase. When cap rates expand (go up), property values decrease. Understanding what drives these movements is essential for timing acquisitions and dispositions.</p>
+  <p>Cap rate compression happens when: investor demand increases, interest rates fall, property fundamentals improve (lower vacancy, rising rents), or capital flows into a market.</p>
+  <p>Cap rate expansion happens when: interest rates rise, investor demand weakens, property fundamentals deteriorate, or economic uncertainty increases.</p>
+  <p>Between 2020 and 2022, cap rates compressed dramatically as low interest rates fueled strong demand. Since 2022, cap rates have expanded across most property types as interest rates rose sharply. In 2026, many markets are stabilizing, though office properties continue to see upward pressure on cap rates.</p>
+  <p>Understanding where you are in the cap rate cycle helps you make better acquisition and disposition decisions.</p>
+
+  <h2>Using Cap Rate in Acquisitions</h2>
+  <p>Cap rate is a starting point, not the final word, on whether a deal is worth pursuing. Here is how experienced investors use it.</p>
+  <p>First, compare the cap rate to the cost of debt. If you can borrow at 6.5% and the property trades at a 7.5% cap rate, there is positive leverage: the property earns more than the debt costs, meaning financing amplifies returns. If the cap rate is below the borrowing rate (negative leverage), the property earns less than the cost of debt, which compresses cash returns.</p>
+  <p>Second, compare to market cap rates for similar properties. A property trading well above market cap rates may signal hidden problems (deferred maintenance, tenant risk, environmental issues) or a genuine bargain. A property trading below market may be overpriced or reflect premium quality.</p>
+  <p>Third, look at the "going-in" cap rate versus the "exit" cap rate in your projections. If you assume cap rate compression at exit but rates stay elevated, your actual returns will fall short. Conservative underwriting assumes flat or slightly expanding cap rates at disposition.</p>
+
+</section>
+
+<!-- ====================================================================
+     FAQ SECTION
+     ==================================================================== -->
+<section class="faq-section">
+  <div class="container" style="max-width: 760px;">
+    <h2 style="text-align: center; font-size: var(--text-xl); font-weight: 800; margin-bottom: var(--space-8);">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-1">
+          <span>What is a good cap rate for commercial real estate?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-cap-1" role="region">
+          <div class="faq-answer-inner">
+            <p>There is no single "good" cap rate because the right number depends on property type, location, tenant quality, and your investment goals. In general, cap rates between 5% and 8% are the most common range for stabilized commercial properties. Lower cap rates (4% to 6%) are typical of prime locations and institutional-quality assets where investors accept lower yields in exchange for stability and appreciation potential. Higher cap rates (8% to 10%+) are found in secondary markets, value-add properties, and higher-risk asset types. The key is to compare the cap rate to both the cost of debt and to market averages for similar properties.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-2">
+          <span>How do interest rates affect cap rates?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-cap-2" role="region">
+          <div class="faq-answer-inner">
+            <p>Interest rates and cap rates generally move in the same direction, though not in lockstep. When interest rates rise, the cost of borrowing increases, which reduces what investors can pay for properties while maintaining positive leverage. This pushes prices down and cap rates up. When interest rates fall, cheaper debt allows investors to pay more, pushing prices up and cap rates down. The "spread" between cap rates and interest rates matters as well. Historically, commercial cap rates have traded 150 to 250 basis points above the 10-year Treasury yield. When spreads are thin, the market may be overheated. When spreads are wide, there may be buying opportunities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-3">
+          <span>What is the difference between cap rate and cash-on-cash return?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-cap-3" role="region">
+          <div class="faq-answer-inner">
+            <p>Cap rate measures the unleveraged yield on a property (NOI divided by property value). Cash-on-cash return measures the leveraged yield on the equity you invest (annual pre-tax cash flow divided by total cash invested). If you buy a property all cash, the two numbers are identical. But most investors use financing, which changes the picture. With favorable leverage (when the cap rate exceeds the cost of debt), cash-on-cash return will be higher than the cap rate because the debt amplifies equity returns. With unfavorable leverage, cash-on-cash return can be lower than the cap rate or even negative.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-4">
+          <span>Can I compare cap rates across different property types?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-cap-4" role="region">
+          <div class="faq-answer-inner">
+            <p>You can, but only with proper context. Different property types carry different risk profiles, income stability, and growth potential, which is why their cap rates differ. A 6% cap rate on a Class A multifamily property in a top metro represents a very different risk and return profile than a 6% cap rate on a suburban office building. Within the same property type and market, cap rates are highly comparable and useful for evaluating relative value. Across property types, the cap rate spread reflects the market's view of relative risk. Use cap rates as one data point alongside DSCR, cash-on-cash return, and projected IRR to make investment decisions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CTA BLOCK
+     ==================================================================== -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Found an Investment Opportunity? Let's Line Up Financing.</h2>
+    <p>Tell us about your property in 60 seconds. We will match you to lenders who specialize in your property type and investment strategy. No credit pull. No commitment. No cost.</p>
+    <a href="../match.html" class="btn btn-white btn-lg">Find My Loan Options</a>
+    <p class="cta-trust-line">Hundreds of lender relationships. All loan types. Nationwide. Licensed in all 50 states.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender: fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="../loans.html">All Loan Products</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="../loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="../loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="../loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="../investors.html">Real Estate Investors</a></li>
+          <li><a href="../small-business.html">Small Business Owners</a></li>
+          <li><a href="../hospitality.html">Hospitality Operators</a></li>
+          <li><a href="../match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="../learn.html">Education Hub</a></li>
+          <li><a href="../articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="../articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="../articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="../about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+      <p style="margin-top: var(--space-3);">
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS -->
+<script src="../app.js"></script>
+
+<!-- Cap Rate Calculator Logic -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Helpers ----
+  function parseNum(str) {
+    if (!str) return NaN;
+    return parseFloat(str.replace(/[^0-9.\-]/g, ''));
+  }
+
+  function formatCurrency(n) {
+    if (isNaN(n) || !isFinite(n)) return '$0';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function formatInput(input) {
+    var raw = input.value.replace(/[^0-9.]/g, '');
+    var parts = raw.split('.');
+    if (parts[0]) {
+      parts[0] = parseInt(parts[0], 10).toLocaleString('en-US');
+    }
+    input.value = parts.length > 1 ? parts[0] + '.' + parts[1] : parts[0];
+  }
+
+  // ---- Mode toggle ----
+  var toggleBtns = document.querySelectorAll('#mode-toggle button');
+  var caprateInputs = document.getElementById('mode-caprate-inputs');
+  var valueInputs = document.getElementById('mode-value-inputs');
+  var calcBtn = document.getElementById('calc-btn');
+  var currentMode = 'caprate';
+
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      toggleBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentMode = btn.getAttribute('data-mode');
+      if (currentMode === 'value') {
+        caprateInputs.style.display = 'none';
+        valueInputs.style.display = 'block';
+        calcBtn.textContent = 'Calculate Property Value';
+      } else {
+        caprateInputs.style.display = 'block';
+        valueInputs.style.display = 'none';
+        calcBtn.textContent = 'Calculate Cap Rate';
+      }
+    });
+  });
+
+  // ---- Auto-format currency inputs on blur ----
+  var currencyInputIds = ['calc-noi', 'calc-property-value', 'calc-noi-2'];
+  currencyInputIds.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('blur', function () { formatInput(el); });
+    }
+  });
+
+  // ---- Gauge position helper ----
+  // Mapping: 2%=0%, 5%=30%, 7%=50%, 10%+=100%
+  function gaugePosition(capRate) {
+    if (capRate <= 2) return 0;
+    if (capRate <= 5) return ((capRate - 2) / 3) * 30;
+    if (capRate <= 7) return 30 + ((capRate - 5) / 2) * 20;
+    if (capRate <= 10) return 50 + ((capRate - 7) / 3) * 50;
+    return 100;
+  }
+
+  // ---- Interpretation helper ----
+  function getInterpretation(capRate) {
+    if (capRate < 4) {
+      return {
+        cls: 'weak',
+        text: 'Low cap rate. Typical of prime properties in top-tier markets (Manhattan, SF, LA). Lower risk but also lower cash returns. Value appreciation is the primary return driver.'
+      };
+    } else if (capRate < 6) {
+      return {
+        cls: 'adequate',
+        text: 'Below average cap rate. Common for Class A properties in major metros. Indicates strong tenant quality and stable cash flows, but limited income yield.'
+      };
+    } else if (capRate < 8) {
+      return {
+        cls: 'strong',
+        text: 'Average cap rate. Typical of suburban and secondary market properties. Balanced mix of income yield and potential appreciation.'
+      };
+    } else if (capRate < 10) {
+      return {
+        cls: 'adequate',
+        text: 'Above average cap rate. Common for Class B/C properties, value-add deals, and tertiary markets. Higher income yield but may carry more risk or require active management.'
+      };
+    } else {
+      return {
+        cls: 'weak',
+        text: 'High cap rate. May indicate higher risk, deferred maintenance, or a distressed situation. Could also represent a strong value-add opportunity. Careful due diligence is essential.'
+      };
+    }
+  }
+
+  // ---- Main calculation ----
+  calcBtn.addEventListener('click', function () {
+    var noi, capRate, propertyValue;
+
+    if (currentMode === 'caprate') {
+      noi = parseNum(document.getElementById('calc-noi').value);
+      propertyValue = parseNum(document.getElementById('calc-property-value').value);
+
+      if (isNaN(noi) || noi <= 0) {
+        alert('Please enter your net operating income.');
+        return;
+      }
+      if (isNaN(propertyValue) || propertyValue <= 0) {
+        alert('Please enter the property value.');
+        return;
+      }
+
+      capRate = (noi / propertyValue) * 100;
+    } else {
+      noi = parseNum(document.getElementById('calc-noi-2').value);
+      var targetCap = parseNum(document.getElementById('calc-target-cap').value);
+
+      if (isNaN(noi) || noi <= 0) {
+        alert('Please enter your net operating income.');
+        return;
+      }
+      if (isNaN(targetCap) || targetCap <= 0) {
+        alert('Please enter a valid target cap rate.');
+        return;
+      }
+
+      capRate = targetCap;
+      propertyValue = noi / (targetCap / 100);
+    }
+
+    // Display results
+    var resultEl = document.getElementById('calc-result');
+    resultEl.classList.add('visible');
+
+    // Main display value
+    var resultCaprateEl = document.getElementById('result-caprate');
+    var resultLabel = document.getElementById('result-label');
+    var primaryItem = document.getElementById('result-primary-item');
+    var primaryValue = document.getElementById('result-primary');
+
+    if (currentMode === 'caprate') {
+      resultLabel.textContent = 'Cap Rate';
+      resultCaprateEl.textContent = capRate.toFixed(2) + '%';
+      primaryItem.querySelector('.tool-result-label').textContent = 'Cap Rate';
+      primaryValue.textContent = capRate.toFixed(2) + '%';
+    } else {
+      resultLabel.textContent = 'Implied Property Value';
+      resultCaprateEl.textContent = formatCurrency(propertyValue);
+      primaryItem.querySelector('.tool-result-label').textContent = 'Implied Property Value';
+      primaryValue.textContent = formatCurrency(propertyValue);
+    }
+
+    // NOI display
+    document.getElementById('result-noi').textContent = formatCurrency(noi);
+
+    // Implied values at various cap rates
+    document.getElementById('result-val-5').textContent = formatCurrency(noi / 0.05);
+    document.getElementById('result-val-6').textContent = formatCurrency(noi / 0.06);
+    document.getElementById('result-val-7').textContent = formatCurrency(noi / 0.07);
+    document.getElementById('result-val-8').textContent = formatCurrency(noi / 0.08);
+
+    // Gauge
+    var marker = document.getElementById('gauge-marker');
+    var pct = gaugePosition(capRate);
+    marker.style.left = Math.min(pct, 100) + '%';
+
+    // Interpretation
+    var interp = document.getElementById('result-interpretation');
+    var interpData = getInterpretation(capRate);
+    interp.className = 'tool-interpretation ' + interpData.cls;
+    interp.textContent = interpData.text;
+
+    // Smooth scroll to results
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
+
+<!-- FAQ Accordion -->
+<script>
+(function () {
+  'use strict';
+  var faqButtons = document.querySelectorAll('.faq-question');
+  faqButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      var answer = btn.nextElementSibling;
+      if (!expanded) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      } else {
+        answer.style.maxHeight = '0';
+      }
+    });
+  });
+})();
+</script>
+
+<script src="../chatbot.js?v=5"></script>
+</body>
+</html>

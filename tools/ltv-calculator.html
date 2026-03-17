@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>LTV Calculator: Calculate Your Loan-to-Value Ratio | Commercial Loan Help</title>
+<meta name="description" content="Free LTV calculator for commercial real estate. Enter your loan amount and property value to see your loan-to-value ratio and how lenders will view your deal.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/tools/ltv-calculator">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="LTV Calculator: Calculate Your Loan-to-Value Ratio">
+<meta property="og:description" content="Free LTV calculator for commercial real estate. Enter your loan amount and property value to see your loan-to-value ratio and how lenders will view your deal.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/tools/ltv-calculator">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chatbot.css?v=5">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LTV Calculator",
+  "description": "Free loan-to-value ratio calculator for commercial real estate investors and borrowers.",
+  "url": "https://www.commercialloanhelp.com/tools/ltv-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Commercial Loan Help"
+  }
+}
+</script>
+
+<style>
+  /* Tool-hero: extends page-hero with tool-specific tweaks */
+  .tool-hero {
+    background: linear-gradient(135deg, var(--clh-brand-deep) 0%, var(--clh-brand-dark) 100%);
+    padding-block: clamp(var(--space-10), 6vw, var(--space-16));
+    text-align: center;
+    color: var(--color-text-inverse);
+  }
+  .tool-hero h1 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+  .tool-hero p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  /* Mode toggle */
+  .tool-toggle {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+    background: var(--clh-gray);
+    border-radius: var(--radius-md);
+    padding: var(--space-1);
+  }
+  .tool-toggle button {
+    flex: 1;
+    padding: var(--space-2) var(--space-4);
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tool-toggle button.active {
+    background: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  /* LTV gauge */
+  .tool-gauge {
+    margin-top: var(--space-5);
+  }
+  .tool-gauge-bar {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #28a745 0%, #28a745 50%, #f0ad4e 50%, #f0ad4e 67%, #dc3545 67%, #dc3545 100%);
+    position: relative;
+    overflow: visible;
+  }
+  .tool-gauge-marker {
+    position: absolute;
+    top: -6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--clh-brand);
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .tool-gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    opacity: 0.7;
+  }
+  .tool-interpretation {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--text-sm);
+  }
+  .tool-interpretation.strong {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+  }
+  .tool-interpretation.adequate {
+    background: rgba(240, 173, 78, 0.15);
+    color: #d4940a;
+  }
+  .tool-interpretation.weak {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+  }
+
+  /* Section label inside tool card */
+  .tool-section-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clh-brand);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tool-section-label:first-child {
+    margin-top: 0;
+  }
+
+  /* Input prefix/suffix */
+  .tool-input-wrap {
+    position: relative;
+  }
+  .tool-input-wrap .tool-prefix {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap .tool-suffix {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .tool-input-wrap input.has-prefix {
+    padding-left: var(--space-7);
+  }
+  .tool-input-wrap input.has-suffix {
+    padding-right: var(--space-8);
+  }
+
+  /* Educational content styling */
+  .tool-education {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+  }
+  .tool-education h2 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-10);
+    letter-spacing: -0.02em;
+  }
+  .tool-education h2:first-child {
+    margin-top: 0;
+  }
+  .tool-education p {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+  .tool-education ul {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+  }
+  .tool-education li {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+  .tool-education .formula-highlight {
+    background: var(--clh-gray);
+    border-left: 4px solid var(--clh-accent);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-md);
+    margin-block: var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--clh-brand);
+    text-align: center;
+  }
+  .tool-education .dscr-tier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .dscr-tier-table th,
+  .dscr-tier-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .dscr-tier-table th {
+    font-weight: 700;
+    background: var(--clh-gray);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .dscr-tier-table .status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: var(--space-2);
+    vertical-align: middle;
+  }
+</style>
+
+</head>
+<body>
+
+<main>
+
+<!-- ====================================================================
+     NAVIGATION
+     ==================================================================== -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Commercial Loan Help home">
+      <img src="../logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../investors.html">Investors</a></li>
+      <li><a href="../small-business.html">Small Business</a></li>
+      <li><a href="../hospitality.html">Hospitality</a></li>
+      <li><a href="../learn.html">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="../match.html" class="btn btn-primary hide-mobile">Find My Loan</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====================================================================
+     TOOL HERO
+     ==================================================================== -->
+<section class="tool-hero">
+  <div class="container">
+    <h1>LTV Calculator: Calculate Your Loan-to-Value Ratio</h1>
+    <p>Enter your loan amount and property value to instantly calculate LTV, see maximum loan amounts at common thresholds, and understand how LTV affects your financing options.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CALCULATOR
+     ==================================================================== -->
+<section class="tool-container">
+  <div class="tool-card" id="ltv-calc">
+
+    <!-- Mode Toggle -->
+    <div class="tool-toggle" id="mode-toggle">
+      <button class="active" data-mode="calc-ltv">Calculate LTV</button>
+      <button data-mode="calc-max-loan">Calculate Max Loan</button>
+    </div>
+
+    <!-- Mode 1: Calculate LTV -->
+    <div id="mode-ltv-inputs">
+      <div class="tool-section-label">Loan Details</div>
+
+      <div class="tool-input-group">
+        <label for="calc-loan-amount">Loan Amount</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-loan-amount" class="has-prefix" placeholder="e.g. 3,500,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="tool-input-group">
+        <label for="calc-property-value">Property Value (Appraised Value)</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-property-value" class="has-prefix" placeholder="e.g. 5,000,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode 2: Calculate Max Loan -->
+    <div id="mode-max-loan-inputs" style="display: none;">
+      <div class="tool-section-label">Target Leverage</div>
+
+      <div class="tool-input-group">
+        <label for="calc-target-ltv">Target LTV (%)</label>
+        <div class="tool-input-wrap">
+          <input type="text" id="calc-target-ltv" class="has-suffix" placeholder="e.g. 75" inputmode="decimal" autocomplete="off">
+          <span class="tool-suffix">%</span>
+        </div>
+      </div>
+
+      <div class="tool-input-group">
+        <label for="calc-property-value-2">Property Value (Appraised Value)</label>
+        <div class="tool-input-wrap">
+          <span class="tool-prefix">$</span>
+          <input type="text" id="calc-property-value-2" class="has-prefix" placeholder="e.g. 5,000,000" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <button class="tool-btn" id="calc-btn">Calculate LTV</button>
+
+    <!-- Results -->
+    <div class="tool-result" id="calc-result">
+      <div class="tool-result-label" id="result-label">Your LTV</div>
+      <div class="tool-result-value" id="result-ltv">0.00%</div>
+
+      <div class="tool-gauge">
+        <div class="tool-gauge-bar">
+          <div class="tool-gauge-marker" id="gauge-marker" style="left: 0%;"></div>
+        </div>
+        <div class="tool-gauge-labels">
+          <span>0%</span>
+          <span>65%</span>
+          <span>75%</span>
+          <span>90%+</span>
+        </div>
+      </div>
+
+      <div class="tool-interpretation" id="result-interpretation"></div>
+
+      <div class="tool-result-grid">
+        <div class="tool-result-item">
+          <div class="tool-result-label" id="result-primary-label">LTV</div>
+          <div class="tool-result-value" id="result-primary">0%</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Equity Required</div>
+          <div class="tool-result-value" id="result-equity">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Max Loan at 65% LTV</div>
+          <div class="tool-result-value" id="result-max-65">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Max Loan at 70% LTV</div>
+          <div class="tool-result-value" id="result-max-70">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Max Loan at 75% LTV</div>
+          <div class="tool-result-value" id="result-max-75">$0</div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Max Loan at 80% LTV</div>
+          <div class="tool-result-value" id="result-max-80">$0</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="tool-disclaimer">This calculator provides estimates for educational purposes only. Actual lender requirements and calculations may vary. This is not a commitment to lend.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     EDUCATIONAL CONTENT
+     ==================================================================== -->
+<section class="tool-education">
+
+  <h2>What Is Loan-to-Value Ratio?</h2>
+  <p>Loan-to-value ratio (LTV) is one of the most fundamental metrics in commercial real estate lending. It measures the size of the loan relative to the appraised value of the property. Lenders use LTV to assess how much equity cushion exists in a deal. If a borrower defaults, the lender needs to recover the outstanding loan balance by selling the property. A lower LTV means there is a larger buffer between the loan amount and the property's value, giving the lender greater protection against loss.</p>
+  <div class="formula-highlight">LTV = Loan Amount / Property Value x 100</div>
+  <p>For example, if you are borrowing $3,500,000 against a property appraised at $5,000,000, your LTV is 70%. This means the lender is financing 70% of the property's value and you are providing 30% in equity. The lower the LTV, the more equity the borrower has at stake, which lenders view as a sign of lower risk.</p>
+  <p>LTV is used at every stage of the lending process. It is part of the initial loan screening, the formal underwriting, and the final approval. Many lenders publish maximum LTV guidelines by property type, and most loan programs have hard caps that cannot be exceeded regardless of the borrower's financial strength or the property's cash flow.</p>
+
+  <h2>Maximum LTV by Loan Type</h2>
+  <p>Different loan programs have different maximum LTV thresholds. The maximum LTV a lender will offer depends on the loan program, the property type, the market, and the borrower's track record. The table below summarizes typical limits across the most common commercial real estate loan types. Keep in mind that these are general ranges; individual deals may fall above or below these figures depending on the specifics.</p>
+
+  <table class="dscr-tier-table">
+    <thead>
+      <tr>
+        <th>Loan Type</th>
+        <th>Typical Max LTV</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Conventional Bank</td>
+        <td>70% to 75%</td>
+        <td>May go higher for strong sponsors and stabilized properties</td>
+      </tr>
+      <tr>
+        <td>CMBS</td>
+        <td>65% to 75%</td>
+        <td>Typically 65% for retail and office; 75% for multifamily</td>
+      </tr>
+      <tr>
+        <td>Life Insurance Company</td>
+        <td>60% to 70%</td>
+        <td>Conservative underwriting; lowest rates</td>
+      </tr>
+      <tr>
+        <td>SBA 504</td>
+        <td>Up to 90%</td>
+        <td>Requires owner-occupancy; includes CDC second lien</td>
+      </tr>
+      <tr>
+        <td>SBA 7(a)</td>
+        <td>Up to 85% to 90%</td>
+        <td>For smaller loans; includes SBA guarantee</td>
+      </tr>
+      <tr>
+        <td>Fannie Mae / Freddie Mac</td>
+        <td>75% to 80%</td>
+        <td>Multifamily only; competitive rates</td>
+      </tr>
+      <tr>
+        <td>Bridge Loans</td>
+        <td>70% to 80%</td>
+        <td>Based on as-is or as-stabilized value depending on lender</td>
+      </tr>
+      <tr>
+        <td>Hard Money</td>
+        <td>60% to 70%</td>
+        <td>Asset-based; fast close but highest cost</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>How LTV Affects Your Interest Rate</h2>
+  <p>LTV has a direct impact on the interest rate you will pay. Lenders price risk into their rates, and higher LTV means more risk. A deal at 60% LTV might receive a rate 50 to 100 basis points lower than the same deal at 75% LTV. This is because the lender has more collateral protection at lower leverage. With a thicker equity cushion, the probability of loss on default drops significantly, and lenders reward that reduced risk with tighter pricing.</p>
+  <p>Some lenders use "LTV pricing tiers" where rates step up at specific thresholds (e.g., under 60%, 60% to 65%, 65% to 70%, 70% to 75%). If you are close to a tier boundary, even a small reduction in loan amount can meaningfully lower your rate. For borrowers with flexibility, putting slightly more equity into the deal can result in significant savings over the life of the loan.</p>
+  <p>Beyond the rate itself, LTV also influences other loan terms. Lower LTV deals may receive longer interest-only periods, more flexible prepayment provisions, and fewer reserve requirements. Lenders view low-leverage borrowers as less risky partners, which often translates into a smoother approval process and faster closing timelines. On the other hand, higher LTV requests may trigger additional conditions such as personal guarantees, escrow holdbacks, or supplemental collateral.</p>
+
+  <h2>LTV vs. LTC: What Is the Difference?</h2>
+  <p>LTV and LTC (loan-to-cost) are related but measure different things. LTV uses the property's current appraised value as the denominator. LTC uses the total project cost (purchase price plus renovation or construction costs) as the denominator.</p>
+  <p>For stabilized acquisitions with no renovation planned, LTV and LTC are often similar. But for value-add deals or ground-up construction, LTC is typically the more relevant metric. Lenders use LTC to ensure the borrower has enough equity relative to total project costs, not just relative to the as-is property value.</p>
+  <p>A property purchased for $3M with $2M in planned renovations has a total cost of $5M. If the loan is $3.5M, the LTC is 70% even though the LTV (based on as-is value of $3M) would be 117%. Understanding which metric your lender prioritizes helps you structure the right capital stack.</p>
+  <p>For stabilized property acquisitions, focus on LTV. For construction, heavy renovation, or repositioning projects, expect lenders to underwrite to both LTV (often based on the projected stabilized value) and LTC. In many value-add scenarios, lenders will size the loan using the more conservative of the two metrics, so it pays to run both calculations before approaching a lender.</p>
+
+</section>
+
+<!-- ====================================================================
+     FAQ SECTION
+     ==================================================================== -->
+<section class="faq-section">
+  <div class="container" style="max-width: 760px;">
+    <h2 style="text-align: center; font-size: var(--text-xl); font-weight: 800; margin-bottom: var(--space-8);">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-ltv-1">
+          <span>What is a good LTV for a commercial real estate loan?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-ltv-1" role="region">
+          <div class="faq-answer-inner">
+            <p>Most commercial lenders are comfortable with LTVs between 65% and 75%. An LTV under 65% is considered conservative and will typically earn you the best rates and terms. At 75% to 80%, you will still find lenders, but options narrow and rates increase. Above 80%, conventional commercial lending becomes difficult, though SBA programs can go up to 90% for qualifying owner-occupied properties. The right LTV depends on your financing goals: lower leverage means lower payments and better terms, while higher leverage preserves cash for other investments.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-ltv-2">
+          <span>What is the maximum LTV for a commercial loan?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-ltv-2" role="region">
+          <div class="faq-answer-inner">
+            <p>Maximum LTV varies significantly by loan type. Conventional bank loans typically cap at 70% to 75%. CMBS loans range from 65% to 75% depending on property type. SBA 504 loans can reach 90% for owner-occupied properties. Bridge lenders may go to 75% to 80% of as-is value or even higher based on after-renovation value. The maximum LTV a specific lender will offer also depends on property type, market location, tenant quality, and the borrower's financial strength. Multifamily properties generally receive the highest LTV limits, while special-purpose and hospitality properties receive the lowest.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-ltv-3">
+          <span>How can I reduce my LTV to get better loan terms?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-ltv-3" role="region">
+          <div class="faq-answer-inner">
+            <p>You can reduce LTV by either increasing equity or increasing property value. Increasing equity means putting more cash into the deal. Increasing property value can be achieved through property improvements, lease-up to stabilized occupancy, or obtaining a higher appraisal. Some borrowers also use mezzanine debt or preferred equity to bridge the gap between the senior loan and their available cash, which keeps the senior LTV low while still allowing higher total leverage. Another approach is negotiating a lower purchase price, which simultaneously increases your equity percentage and may result in a lower appraised value baseline.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-ltv-4">
+          <span>Does LTV or DSCR matter more to lenders?</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-answer" id="faq-ltv-4" role="region">
+          <div class="faq-answer-inner">
+            <p>Both metrics are critical, and lenders will size the loan to whichever produces the lower amount. LTV protects against collateral value decline, while DSCR protects against cash flow shortfalls. In practice, the binding constraint depends on the deal. For properties with strong cash flow but modest values, DSCR may allow a larger loan than LTV. For properties with high values but thin margins, LTV may be more generous than DSCR. Most commercial loans must satisfy minimum thresholds for both metrics, and some lenders also apply a debt yield test. The loan is sized to the most conservative result.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CTA BLOCK
+     ==================================================================== -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Know Your LTV? Let's Find the Right Lender.</h2>
+    <p>Tell us about your property in 60 seconds. We will match you to lenders who work with your leverage level and property type. No credit pull. No commitment. No cost.</p>
+    <a href="../match.html" class="btn btn-white btn-lg">Find My Loan Options</a>
+    <p class="cta-trust-line">Hundreds of lender relationships. All loan types. Nationwide. Licensed in all 50 states.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender: fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="../loans.html">All Loan Products</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="../loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="../loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="../loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="../investors.html">Real Estate Investors</a></li>
+          <li><a href="../small-business.html">Small Business Owners</a></li>
+          <li><a href="../hospitality.html">Hospitality Operators</a></li>
+          <li><a href="../match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="../learn.html">Education Hub</a></li>
+          <li><a href="../articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="../articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="../articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="../about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+      <p style="margin-top: var(--space-3);">
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS -->
+<script src="../app.js"></script>
+
+<!-- LTV Calculator Logic -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Helpers ----
+  function parseNum(str) {
+    if (!str) return NaN;
+    return parseFloat(str.replace(/[^0-9.\-]/g, ''));
+  }
+
+  function formatCurrency(n) {
+    if (isNaN(n) || !isFinite(n)) return '$0';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function formatInput(input) {
+    var raw = input.value.replace(/[^0-9.]/g, '');
+    var parts = raw.split('.');
+    if (parts[0]) {
+      parts[0] = parseInt(parts[0], 10).toLocaleString('en-US');
+    }
+    input.value = parts.length > 1 ? parts[0] + '.' + parts[1] : parts[0];
+  }
+
+  // ---- Toggle between Calculate LTV and Calculate Max Loan ----
+  var toggleBtns = document.querySelectorAll('#mode-toggle button');
+  var ltvInputs = document.getElementById('mode-ltv-inputs');
+  var maxLoanInputs = document.getElementById('mode-max-loan-inputs');
+
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      toggleBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (btn.getAttribute('data-mode') === 'calc-max-loan') {
+        ltvInputs.style.display = 'none';
+        maxLoanInputs.style.display = 'block';
+      } else {
+        ltvInputs.style.display = 'block';
+        maxLoanInputs.style.display = 'none';
+      }
+    });
+  });
+
+  // ---- Auto-format currency inputs on blur ----
+  var currencyInputs = ['calc-loan-amount', 'calc-property-value', 'calc-property-value-2'];
+  currencyInputs.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('blur', function () { formatInput(el); });
+    }
+  });
+
+  // ---- Gauge position helper ----
+  // Mapping: 0%=0%, 65%=50%, 75%=67%, 90%+=100%
+  function ltvToGaugePct(ltv) {
+    if (ltv <= 0) return 0;
+    if (ltv <= 65) {
+      return (ltv / 65) * 50;
+    } else if (ltv <= 75) {
+      return 50 + ((ltv - 65) / 10) * 17;
+    } else if (ltv <= 90) {
+      return 67 + ((ltv - 75) / 15) * 33;
+    } else {
+      return 100;
+    }
+  }
+
+  // ---- Main calculation ----
+  document.getElementById('calc-btn').addEventListener('click', function () {
+    var activeMode = document.querySelector('#mode-toggle button.active').getAttribute('data-mode');
+    var ltv, loanAmount, propertyValue;
+
+    if (activeMode === 'calc-ltv') {
+      // Mode 1: Calculate LTV from loan amount and property value
+      loanAmount = parseNum(document.getElementById('calc-loan-amount').value);
+      propertyValue = parseNum(document.getElementById('calc-property-value').value);
+
+      if (isNaN(loanAmount) || loanAmount <= 0) {
+        alert('Please enter the loan amount.');
+        return;
+      }
+      if (isNaN(propertyValue) || propertyValue <= 0) {
+        alert('Please enter the property value.');
+        return;
+      }
+
+      ltv = (loanAmount / propertyValue) * 100;
+
+    } else {
+      // Mode 2: Calculate Max Loan from target LTV and property value
+      var targetLtv = parseNum(document.getElementById('calc-target-ltv').value);
+      propertyValue = parseNum(document.getElementById('calc-property-value-2').value);
+
+      if (isNaN(targetLtv) || targetLtv <= 0 || targetLtv > 100) {
+        alert('Please enter a valid target LTV percentage (1 to 100).');
+        return;
+      }
+      if (isNaN(propertyValue) || propertyValue <= 0) {
+        alert('Please enter the property value.');
+        return;
+      }
+
+      ltv = targetLtv;
+      loanAmount = propertyValue * (targetLtv / 100);
+    }
+
+    // Ensure valid
+    if (isNaN(ltv) || !isFinite(ltv)) {
+      alert('Please check your inputs and try again.');
+      return;
+    }
+
+    // Calculate derived values
+    var equity = propertyValue - loanAmount;
+    var maxLoan65 = propertyValue * 0.65;
+    var maxLoan70 = propertyValue * 0.70;
+    var maxLoan75 = propertyValue * 0.75;
+    var maxLoan80 = propertyValue * 0.80;
+
+    // Display results
+    var resultEl = document.getElementById('calc-result');
+    resultEl.classList.add('visible');
+
+    document.getElementById('result-ltv').textContent = ltv.toFixed(2) + '%';
+
+    // Update primary result based on mode
+    if (activeMode === 'calc-max-loan') {
+      document.getElementById('result-primary-label').textContent = 'Max Loan Amount';
+      document.getElementById('result-primary').textContent = formatCurrency(loanAmount);
+    } else {
+      document.getElementById('result-primary-label').textContent = 'LTV';
+      document.getElementById('result-primary').textContent = ltv.toFixed(2) + '%';
+    }
+
+    document.getElementById('result-equity').textContent = formatCurrency(equity);
+    document.getElementById('result-max-65').textContent = formatCurrency(maxLoan65);
+    document.getElementById('result-max-70').textContent = formatCurrency(maxLoan70);
+    document.getElementById('result-max-75').textContent = formatCurrency(maxLoan75);
+    document.getElementById('result-max-80').textContent = formatCurrency(maxLoan80);
+
+    // Set gauge marker position
+    var marker = document.getElementById('gauge-marker');
+    var gaugePct = ltvToGaugePct(ltv);
+    marker.style.left = Math.min(gaugePct, 100) + '%';
+
+    // Interpretation
+    var interp = document.getElementById('result-interpretation');
+
+    if (ltv < 65) {
+      interp.className = 'tool-interpretation strong';
+      interp.textContent = 'Low leverage. Strong equity position that will attract the widest range of lenders and the most competitive rates. You may be able to negotiate better terms.';
+    } else if (ltv < 75) {
+      interp.className = 'tool-interpretation strong';
+      interp.textContent = 'Moderate leverage. This LTV falls within the comfort zone of most commercial lenders, including banks, life companies, and CMBS. You should have access to competitive terms.';
+    } else if (ltv < 80) {
+      interp.className = 'tool-interpretation adequate';
+      interp.textContent = 'Higher leverage. Some conventional lenders will accommodate this LTV, but options narrow compared to sub-75% deals. SBA and agency programs are well-suited for this range.';
+    } else {
+      interp.className = 'tool-interpretation weak';
+      interp.textContent = 'High leverage. Most conventional commercial lenders cap at 75% to 80% LTV. At this level, consider SBA loans (up to 90%), bridge financing, or mezzanine debt to fill the gap.';
+    }
+
+    // Smooth scroll to results
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
+
+<!-- FAQ Accordion -->
+<script>
+(function () {
+  'use strict';
+  var faqButtons = document.querySelectorAll('.faq-question');
+  faqButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var answerId = btn.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      if (expanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = '0';
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+<script src="../chatbot.js?v=5"></script>
+</body>
+</html>
