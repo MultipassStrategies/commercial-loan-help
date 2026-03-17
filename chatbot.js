@@ -224,16 +224,22 @@
     showTyping();
 
     try {
+      // Timeout after 30 seconds
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: messages }),
+        signal: controller.signal,
       });
 
+      clearTimeout(timeout);
       hideTyping();
 
       if (!response.ok) {
-        throw new Error('Server error');
+        throw new Error('Server error: ' + response.status);
       }
 
       // Handle SSE streaming
@@ -241,6 +247,7 @@
       const decoder = new TextDecoder();
       let assistantText = '';
       let msgEl = null;
+      let streamError = null;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -258,7 +265,8 @@
             const parsed = JSON.parse(data);
 
             if (parsed.error) {
-              throw new Error(parsed.error);
+              streamError = parsed.error;
+              break;
             }
 
             if (parsed.text) {
@@ -290,19 +298,27 @@
               }
             }
           } catch (parseErr) {
-            // Skip unparseable chunks
+            // Skip unparseable JSON chunks only
           }
         }
+        if (streamError) break;
+      }
+
+      if (streamError) {
+        throw new Error(streamError);
       }
 
       if (assistantText) {
         messages.push({ role: 'assistant', content: assistantText });
+      } else {
+        throw new Error('No response received');
       }
 
     } catch (err) {
       hideTyping();
+      console.error('CLH Chat error:', err);
       const errorEl = createMessageElement('assistant',
-        "I'm sorry, I'm having trouble connecting right now. You can still use our free matching service at any time — it only takes 60 seconds and requires no credit pull.");
+        "I'm sorry, I'm having trouble connecting right now. Please try again in a moment. You can also use our free matching service at any time — it only takes 60 seconds and requires no credit pull.");
       container.appendChild(errorEl);
       scrollToBottom();
     }
