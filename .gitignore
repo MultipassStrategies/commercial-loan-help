@@ -19,3 +19,4 @@ Thumbs.db
 # Old server files (replaced by Vercel serverless function)
 api/server.py
 api/knowledge_base.py
+
