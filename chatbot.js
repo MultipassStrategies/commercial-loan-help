@@ -7,7 +7,7 @@
   'use strict';
 
   // API endpoint
-  const API_URL = '/api/chat';
+  const API_URL = '/api';
   const WELCOME_MESSAGE = `Hi there! I'm the Commercial Loan Help assistant. I can help you understand commercial loan types, the 2026 maturity wall, SBA programs, and how our free matching service works.\n\nWhat can I help you with?`;
 
   const SUGGESTIONS = [
