@@ -66,4 +66,82 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Encyclopedia: Loan Types -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/loan-types/commercial-mortgage</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/loan-types/cre-loan-types</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/loan-types/sba-7a-loans</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/loan-types/sba-504-loans</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/loan-types/commercial-bridge-loans</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Encyclopedia: Comparisons -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/comparisons/sba-7a-vs-504</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Encyclopedia: Lending Concepts -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/lending-concepts/dscr-explained</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Encyclopedia: Processes -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/processes/cre-refinance-guide</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/processes/commercial-loan-application</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Encyclopedia: Market Conditions -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/encyclopedia/market-conditions/cre-market-outlook-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Tools / Calculators -->
+  <url>
+    <loc>https://www.commercialloanhelp.com/tools/dscr-calculator</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.commercialloanhelp.com/tools/commercial-mortgage-calculator</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

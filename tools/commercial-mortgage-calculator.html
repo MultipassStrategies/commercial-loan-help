@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Commercial Mortgage Calculator: Estimate Monthly Payments | Commercial Loan Help</title>
+<meta name="description" content="Free commercial mortgage calculator. Estimate monthly payments, total interest, balloon payments, and annual debt service for any commercial real estate loan.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/tools/commercial-mortgage-calculator">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Commercial Mortgage Calculator: Estimate Monthly Payments">
+<meta property="og:description" content="Free commercial mortgage calculator. Estimate monthly payments, total interest, balloon payments, and annual debt service for any commercial real estate loan.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/tools/commercial-mortgage-calculator">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chatbot.css?v=5">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Commercial Mortgage Calculator",
+  "description": "Estimate monthly payments, total interest, balloon payments, and annual debt service for commercial real estate loans.",
+  "url": "https://www.commercialloanhelp.com/tools/commercial-mortgage-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Commercial Loan Help"
+  }
+}
+</script>
+</head>
+
+<body>
+<main>
+
+<!-- ====================================================================
+     NAVIGATION
+     ==================================================================== -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Commercial Loan Help">
+      <img src="../logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../investors.html">Investors</a></li>
+      <li><a href="../small-business.html">Small Business</a></li>
+      <li><a href="../hospitality.html">Hospitality</a></li>
+      <li><a href="../learn.html">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="../match.html" class="btn btn-primary hide-mobile">Find My Loan</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====================================================================
+     TOOL HERO
+     ==================================================================== -->
+<section class="page-hero tool-hero">
+  <div class="container">
+    <h1>Commercial Mortgage Calculator: Estimate Your Monthly Payment</h1>
+    <p>Calculate monthly payments, total interest, balloon payments, and annual debt service for any commercial real estate loan. Enter your loan details below to get started.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CALCULATOR
+     ==================================================================== -->
+<section class="tool-container">
+  <div class="tool-card">
+    <div class="tool-input-group">
+      <label for="calc-property-price">Property Price ($) <span style="font-weight: 400; color: var(--color-text-muted); font-size: var(--text-xs);">optional</span></label>
+      <input type="text" id="calc-property-price" placeholder="e.g. 2,000,000" inputmode="decimal">
+    </div>
+
+    <div class="tool-input-row">
+      <div class="tool-input-group">
+        <label for="calc-down-payment">Down Payment (%)</label>
+        <input type="text" id="calc-down-payment" placeholder="e.g. 25" value="25" inputmode="decimal">
+      </div>
+      <div class="tool-input-group">
+        <label for="calc-loan-amount">Loan Amount ($)</label>
+        <input type="text" id="calc-loan-amount" placeholder="e.g. 1,500,000" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="tool-input-row">
+      <div class="tool-input-group">
+        <label for="calc-interest-rate">Interest Rate (%)</label>
+        <input type="text" id="calc-interest-rate" placeholder="e.g. 6.5" inputmode="decimal">
+      </div>
+      <div class="tool-input-group">
+        <label for="calc-amortization">Amortization (years)</label>
+        <input type="text" id="calc-amortization" placeholder="e.g. 25" value="25" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="tool-input-group">
+      <label for="calc-loan-term">Loan Term (years)</label>
+      <input type="text" id="calc-loan-term" placeholder="e.g. 10" value="10" inputmode="decimal">
+    </div>
+
+    <button class="tool-btn" id="calc-btn">Calculate Payment</button>
+
+    <!-- Primary Result -->
+    <div class="tool-result" id="calc-result">
+      <div class="tool-result-label">Estimated Monthly Payment</div>
+      <div class="tool-result-value" id="result-monthly"></div>
+
+      <div class="tool-result-grid">
+        <div class="tool-result-item">
+          <div class="tool-result-label">Annual Debt Service</div>
+          <div class="tool-result-value" id="result-annual"></div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Total Interest</div>
+          <div class="tool-result-value" id="result-total-interest"></div>
+        </div>
+        <div class="tool-result-item">
+          <div class="tool-result-label">Total Cost (P+I)</div>
+          <div class="tool-result-value" id="result-total-cost"></div>
+        </div>
+        <div class="tool-result-item" id="result-balloon-item" style="display:none;">
+          <div class="tool-result-label">Balloon Payment at Term End</div>
+          <div class="tool-result-value" id="result-balloon"></div>
+        </div>
+        <div class="tool-result-item" id="result-ltv-item" style="display:none;">
+          <div class="tool-result-label">Loan-to-Value (LTV)</div>
+          <div class="tool-result-value" id="result-ltv"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amortization Summary -->
+    <div class="tool-result" id="calc-amort-summary" style="background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border);">
+      <div style="font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-4); color: var(--clh-brand-dark);">Amortization Summary</div>
+      <div id="amort-table-wrap"></div>
+    </div>
+
+    <p class="tool-disclaimer">This calculator provides estimates for educational purposes only. Actual loan terms, rates, and payments may vary based on lender requirements and borrower qualifications. This is not a commitment to lend.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     EDUCATIONAL CONTENT
+     ==================================================================== -->
+<article class="article-body" style="padding-bottom: 0;">
+  <div class="container" style="max-width: 740px;">
+
+    <h2>Understanding Commercial Mortgage Payments</h2>
+    <p>Commercial mortgage payments are calculated using the same core formula as residential mortgages, but with a critical distinction: commercial loans almost always have a shorter term than the amortization period. This means the loan is paid down over 25 or 30 years on paper, but the full remaining balance comes due as a "balloon payment" at the end of the loan term (typically 5, 7, or 10 years).</p>
+    <p>The standard formula for a fixed-rate amortizing loan payment is: <strong>M = P[r(1+r)^n] / [(1+r)^n - 1]</strong>, where P is the principal loan amount, r is the monthly interest rate (annual rate divided by 12), and n is the total number of monthly payments over the amortization period.</p>
+
+    <h2>Amortization vs. Loan Term: The Balloon Payment</h2>
+    <p>One of the most important concepts in commercial lending is the difference between amortization and loan term. The amortization period (typically 25 to 30 years) determines your monthly payment amount by spreading principal repayment over a long horizon. The loan term (typically 5 to 10 years) is the actual duration of the loan before the remaining balance must be repaid or refinanced.</p>
+    <p>For example, a $1,500,000 loan with a 25-year amortization but a 10-year term will have low monthly payments based on the 25-year schedule. However, at the end of year 10, the borrower must pay off the remaining balance in full. This remaining balance is called the balloon payment. In this example, the balloon payment would still be well over $1 million because only 10 years of the 25-year amortization schedule have been completed.</p>
+    <p>The 2026 maturity wall exists precisely because of this structure. Borrowers who took out 5-, 7-, or 10-year term loans between 2016 and 2021 now face balloon payments at a time when refinancing conditions are less favorable.</p>
+    <p>Fully amortizing loans (where the term equals the amortization period) do exist. HUD/FHA multifamily loans, for instance, offer 35-year fully amortizing terms with no balloon payment. However, these are the exception in commercial lending.</p>
+
+    <h2>Factors That Affect Your Commercial Mortgage Rate</h2>
+    <p>Several key variables influence the interest rate a lender will offer:</p>
+    <ul>
+      <li><strong>Loan-to-Value (LTV):</strong> Lower LTV means less risk for the lender and typically better rates. Most conventional commercial loans cap at 65 to 75% LTV.</li>
+      <li><strong>Debt Service Coverage Ratio (DSCR):</strong> Lenders want to see at least 1.20 to 1.25x DSCR. Stronger DSCR often leads to better pricing.</li>
+      <li><strong>Property type:</strong> Multifamily and industrial properties generally receive the most competitive rates. Hospitality and office carry more risk and typically higher pricing.</li>
+      <li><strong>Borrower experience and credit:</strong> Experienced sponsors with strong credit and net worth get better terms.</li>
+      <li><strong>Loan type:</strong> SBA, agency (Fannie/Freddie), and HUD loans often have the most competitive rates. Bridge, hard money, and private credit loans carry higher rates in exchange for speed and flexibility.</li>
+      <li><strong>Market conditions:</strong> Federal Reserve policy, Treasury yields, SOFR rates, and the overall economic environment all influence commercial lending rates.</li>
+      <li><strong>Fixed vs. floating:</strong> Fixed rates provide certainty but may be higher initially. Floating rates (SOFR plus a spread) may start lower but carry the risk of rate increases.</li>
+    </ul>
+
+    <h2>How to Reduce Your Monthly Payment</h2>
+    <p>If your estimated payment is higher than you expected, consider these strategies:</p>
+    <ul>
+      <li><strong>Increase the down payment:</strong> A larger down payment reduces the principal, which directly reduces monthly payments and may also qualify you for a lower rate.</li>
+      <li><strong>Extend the amortization period:</strong> Moving from 20-year to 25-year or 30-year amortization reduces monthly payments (though you pay more total interest over time).</li>
+      <li><strong>Choose an interest-only period:</strong> Some commercial loans offer 1 to 3 years of interest-only payments at the beginning of the loan, significantly reducing initial payment obligations.</li>
+      <li><strong>Shop multiple lenders:</strong> Rates and terms vary significantly across lender types. Our free ClearPath matching system can connect you with multiple lenders in 60 seconds to compare options.</li>
+      <li><strong>Consider loan type:</strong> SBA 504 loans offer below-market fixed rates on the CDC portion. Agency loans (Fannie Mae, Freddie Mac) offer competitive rates for multifamily. HUD loans offer the lowest rates and longest terms for qualifying properties.</li>
+    </ul>
+
+    <h2>Using This Calculator Effectively</h2>
+    <p>This calculator is designed to give you a quick estimate of your commercial mortgage payment. For the most accurate results:</p>
+    <ul>
+      <li>Enter the actual property price and your expected down payment percentage to auto-calculate the loan amount and see your LTV.</li>
+      <li>Use the amortization period your lender has quoted (25 years is the most common for commercial real estate).</li>
+      <li>Set the loan term to match the actual term being offered (not the amortization). This is critical for seeing your balloon payment amount.</li>
+      <li>The Annual Debt Service figure is useful for calculating DSCR: divide your property's Net Operating Income (NOI) by the Annual Debt Service to get your DSCR.</li>
+    </ul>
+    <p>Keep in mind that this calculator assumes a fixed interest rate and standard amortization. Actual payments may include escrows for taxes, insurance, and reserves, which add to your total monthly obligation.</p>
+
+  </div>
+</article>
+
+<!-- ====================================================================
+     FAQ ACCORDION
+     ==================================================================== -->
+<section class="article-faq" style="max-width: 740px; margin: 0 auto; padding: 0 var(--space-4) var(--space-12);">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-calc-1">
+        <span>What is a typical amortization period for a commercial loan?</span>
+        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer" id="faq-calc-1" role="region">
+        <div class="faq-answer-inner">
+          <p>Most commercial real estate loans use a 25-year amortization period. Some lenders offer 20-year or 30-year options depending on the property type and loan program. SBA loans can amortize over 25 years for real estate. HUD/FHA multifamily loans offer the longest amortization at 35 to 40 years, and these are fully amortizing (no balloon payment).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-calc-2">
+        <span>What is a balloon payment and how does it work?</span>
+        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer" id="faq-calc-2" role="region">
+        <div class="faq-answer-inner">
+          <p>A balloon payment is the remaining principal balance that comes due at the end of the loan term. Because most commercial loans have a shorter term (5 to 10 years) than the amortization period (25 to 30 years), the loan is not fully paid off when the term expires. The borrower must either refinance into a new loan, sell the property, or pay the remaining balance in cash. This is a normal part of commercial lending, but it requires advance planning to ensure you have a viable exit strategy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-calc-3">
+        <span>How do I calculate DSCR from these results?</span>
+        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer" id="faq-calc-3" role="region">
+        <div class="faq-answer-inner">
+          <p>DSCR (Debt Service Coverage Ratio) equals your property's Net Operating Income (NOI) divided by Annual Debt Service. This calculator shows your Annual Debt Service in the results. Simply divide your NOI by that figure. For example, if your property generates $180,000 in NOI and the calculator shows $150,000 in annual debt service, your DSCR is 1.20x. Most lenders require a minimum DSCR of 1.20 to 1.25x.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-calc-4">
+        <span>Does this calculator include property taxes, insurance, and escrows?</span>
+        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer" id="faq-calc-4" role="region">
+        <div class="faq-answer-inner">
+          <p>No. This calculator estimates principal and interest payments only. Your actual monthly obligation may include escrows for property taxes, hazard insurance, and replacement reserves. These additional items are collected monthly by the lender and can add significantly to your total payment. Ask your lender for a full estimate that includes all escrow requirements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-calc-5">
+        <span>What if I have an interest-only loan?</span>
+        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer" id="faq-calc-5" role="region">
+        <div class="faq-answer-inner">
+          <p>Interest-only loans do not amortize principal during the interest-only period. To estimate an interest-only payment, multiply your loan amount by the annual interest rate and divide by 12. For example, a $1,500,000 loan at 7% would have a monthly interest-only payment of $8,750. Bridge loans, construction loans, and some mezzanine loans are typically structured as interest-only.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================
+     CTA BLOCK
+     ==================================================================== -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Ready to Find Your Best Loan Option?</h2>
+    <p>Tell us about your property in 60 seconds. We will match you to lenders who specialize in your property type, loan size, and situation. No credit pull. No commitment. No cost.</p>
+    <a href="../match.html" class="btn btn-white btn-lg">Find My Loan Options &rarr;</a>
+    <p class="cta-trust-line">Dozens of deals closed &middot; Hundreds of lender relationships &middot; All loan types &middot; Nationwide</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender: fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="../loans.html">All Loan Products</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="../loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="../loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="../loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="../investors.html">Real Estate Investors</a></li>
+          <li><a href="../small-business.html">Small Business Owners</a></li>
+          <li><a href="../hospitality.html">Hospitality Operators</a></li>
+          <li><a href="../match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="../learn.html">Education Hub</a></li>
+          <li><a href="../articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="../articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="../articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="../about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+      <p style="margin-top: var(--space-3);">
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS -->
+<script src="../app.js"></script>
+
+<!-- ====================================================================
+     CALCULATOR LOGIC
+     ==================================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Utility: format number as $X,XXX.XX ----
+  function fmt(n) {
+    if (n == null || isNaN(n)) return '$0.00';
+    return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  // ---- Utility: parse numeric input (strip $, commas, spaces) ----
+  function parseNum(id) {
+    var el = document.getElementById(id);
+    if (!el) return NaN;
+    var val = el.value.replace(/[$,\s]/g, '');
+    return val === '' ? NaN : parseFloat(val);
+  }
+
+  // ---- Auto-calculate loan amount from property price and down payment ----
+  var priceField = document.getElementById('calc-property-price');
+  var downField = document.getElementById('calc-down-payment');
+  var loanField = document.getElementById('calc-loan-amount');
+
+  function syncLoanAmount() {
+    var price = parseNum('calc-property-price');
+    var downPct = parseNum('calc-down-payment');
+    if (!isNaN(price) && price > 0 && !isNaN(downPct) && downPct >= 0 && downPct < 100) {
+      var loan = price * (1 - downPct / 100);
+      loanField.value = loan.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+  }
+
+  priceField.addEventListener('input', syncLoanAmount);
+  downField.addEventListener('input', syncLoanAmount);
+
+  // ---- Calculate remaining balance after N payments ----
+  function remainingBalance(P, r, totalPayments, paidPayments) {
+    if (r === 0) return P * (1 - paidPayments / totalPayments);
+    var factor = Math.pow(1 + r, totalPayments);
+    var factorPaid = Math.pow(1 + r, paidPayments);
+    return P * (factor - factorPaid) / (factor - 1);
+  }
+
+  // ---- Build amortization summary table ----
+  function buildAmortTable(P, r, monthlyPmt, amortMonths, termMonths) {
+    var wrap = document.getElementById('amort-table-wrap');
+    var periods = [];
+    var displayTerm = Math.min(amortMonths, termMonths);
+
+    // Year 1
+    if (displayTerm >= 12) {
+      periods.push({ label: 'Year 1', start: 0, end: 12 });
+    }
+    // Mid-term
+    var midYear = Math.floor(displayTerm / 12 / 2);
+    if (midYear > 1 && midYear * 12 <= displayTerm && midYear * 12 > 12) {
+      periods.push({ label: 'Year ' + midYear, start: (midYear - 1) * 12, end: midYear * 12 });
+    }
+    // Last full year of term
+    var lastYear = Math.floor(displayTerm / 12);
+    if (lastYear > 1 && lastYear * 12 <= displayTerm) {
+      var alreadyShown = periods.some(function(p) { return p.label === 'Year ' + lastYear; });
+      if (!alreadyShown) {
+        periods.push({ label: 'Year ' + lastYear, start: (lastYear - 1) * 12, end: lastYear * 12 });
+      }
+    }
+
+    if (periods.length === 0) {
+      wrap.innerHTML = '';
+      return;
+    }
+
+    var html = '<table style="width:100%; border-collapse:collapse; font-size: var(--text-sm);">';
+    html += '<thead><tr style="border-bottom: 2px solid var(--color-border);">';
+    html += '<th style="text-align:left; padding: var(--space-2) var(--space-3); font-weight: 700;">Period</th>';
+    html += '<th style="text-align:right; padding: var(--space-2) var(--space-3); font-weight: 700;">Principal Paid</th>';
+    html += '<th style="text-align:right; padding: var(--space-2) var(--space-3); font-weight: 700;">Interest Paid</th>';
+    html += '<th style="text-align:right; padding: var(--space-2) var(--space-3); font-weight: 700;">Remaining Balance</th>';
+    html += '</tr></thead><tbody>';
+
+    for (var p = 0; p < periods.length; p++) {
+      var period = periods[p];
+      var balStart = remainingBalance(P, r, amortMonths, period.start);
+      var balEnd = remainingBalance(P, r, amortMonths, period.end);
+      var principalPaid = balStart - balEnd;
+      var totalPaid = monthlyPmt * (period.end - period.start);
+      var interestPaid = totalPaid - principalPaid;
+
+      html += '<tr style="border-bottom: 1px solid var(--color-border);">';
+      html += '<td style="padding: var(--space-2) var(--space-3); font-weight: 600;">' + period.label + '</td>';
+      html += '<td style="text-align:right; padding: var(--space-2) var(--space-3);">' + fmt(principalPaid) + '</td>';
+      html += '<td style="text-align:right; padding: var(--space-2) var(--space-3);">' + fmt(interestPaid) + '</td>';
+      html += '<td style="text-align:right; padding: var(--space-2) var(--space-3); font-weight: 600;">' + fmt(balEnd) + '</td>';
+      html += '</tr>';
+    }
+
+    html += '</tbody></table>';
+    wrap.innerHTML = html;
+  }
+
+  // ---- Main calculation ----
+  function calculate() {
+    var P = parseNum('calc-loan-amount');
+    var annualRate = parseNum('calc-interest-rate');
+    var amortYears = parseNum('calc-amortization');
+    var termYears = parseNum('calc-loan-term');
+
+    if (isNaN(P) || P <= 0) { alert('Please enter a valid loan amount.'); return; }
+    if (isNaN(annualRate) || annualRate <= 0) { alert('Please enter a valid interest rate.'); return; }
+    if (isNaN(amortYears) || amortYears <= 0) { alert('Please enter a valid amortization period.'); return; }
+    if (isNaN(termYears) || termYears <= 0) { alert('Please enter a valid loan term.'); return; }
+    if (termYears > amortYears) { termYears = amortYears; }
+
+    var r = annualRate / 100 / 12;
+    var n = amortYears * 12;
+    var termMonths = termYears * 12;
+
+    // Monthly payment
+    var monthly;
+    if (r === 0) {
+      monthly = P / n;
+    } else {
+      var factor = Math.pow(1 + r, n);
+      monthly = P * (r * factor) / (factor - 1);
+    }
+
+    var totalOverAmort = monthly * n;
+    var totalInterest = totalOverAmort - P;
+    var annual = monthly * 12;
+
+    // Balloon payment
+    var balloon = 0;
+    var hasBalloon = termYears < amortYears;
+    if (hasBalloon) {
+      balloon = remainingBalance(P, r, n, termMonths);
+    }
+
+    // LTV
+    var propertyPrice = parseNum('calc-property-price');
+    var hasLTV = !isNaN(propertyPrice) && propertyPrice > 0;
+    var ltv = hasLTV ? (P / propertyPrice * 100) : 0;
+
+    // Display results
+    document.getElementById('result-monthly').textContent = fmt(monthly);
+    document.getElementById('result-annual').textContent = fmt(annual);
+    document.getElementById('result-total-interest').textContent = fmt(totalInterest);
+    document.getElementById('result-total-cost').textContent = fmt(totalOverAmort);
+
+    var balloonItem = document.getElementById('result-balloon-item');
+    if (hasBalloon) {
+      document.getElementById('result-balloon').textContent = fmt(balloon);
+      balloonItem.style.display = '';
+    } else {
+      balloonItem.style.display = 'none';
+    }
+
+    var ltvItem = document.getElementById('result-ltv-item');
+    if (hasLTV) {
+      document.getElementById('result-ltv').textContent = ltv.toFixed(1) + '%';
+      ltvItem.style.display = '';
+    } else {
+      ltvItem.style.display = 'none';
+    }
+
+    document.getElementById('calc-result').classList.add('visible');
+
+    // Build amortization summary
+    buildAmortTable(P, r, monthly, n, termMonths);
+    document.getElementById('calc-amort-summary').classList.add('visible');
+
+    // Scroll to results
+    document.getElementById('calc-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  document.getElementById('calc-btn').addEventListener('click', calculate);
+
+  // Allow Enter key to trigger calculation
+  var inputs = document.querySelectorAll('.tool-card input');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        calculate();
+      }
+    });
+  }
+
+  // ---- FAQ Accordion ----
+  var faqBtns = document.querySelectorAll('.faq-question');
+  for (var f = 0; f < faqBtns.length; f++) {
+    faqBtns[f].addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      for (var k = 0; k < faqBtns.length; k++) {
+        faqBtns[k].setAttribute('aria-expanded', 'false');
+        faqBtns[k].parentElement.classList.remove('open');
+      }
+      if (!expanded) {
+        this.setAttribute('aria-expanded', 'true');
+        this.parentElement.classList.add('open');
+      }
+    });
+  }
+})();
+</script>
+
+<script src="../chatbot.js?v=5"></script>
+</body>
+</html>

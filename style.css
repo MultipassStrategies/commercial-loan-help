@@ -2754,6 +2754,24 @@
   margin-bottom: var(--space-3);
 }
 
+.article-card-tag.tag-orange {
+  color: #C2410C;
+  background: #fff7ed;
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.article-card-tag.tag-red {
+  color: #DC2626;
+  background: #fef2f2;
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
 /* Article Card Meta */
 .article-card-meta {
   display: flex;
@@ -3671,4 +3689,555 @@
   color: var(--color-text);
   display: block;
   margin-bottom: var(--space-1);
+}
+
+/* ==========================================================================
+   ENCYCLOPEDIA PAGES
+   ========================================================================== */
+
+.breadcrumb-bar {
+  background: var(--clh-deep);
+  padding: var(--space-3) 0;
+  font-size: var(--text-sm);
+}
+
+.breadcrumb-bar a {
+  color: var(--clh-gold);
+  text-decoration: none;
+}
+
+.breadcrumb-bar a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-bar span {
+  color: rgba(255,255,255,0.6);
+}
+
+.encyclopedia-hero {
+  background: linear-gradient(135deg, var(--clh-brand) 0%, var(--clh-deep) 100%);
+  padding: var(--space-16) 0 var(--space-12);
+  color: var(--color-text-inverse);
+}
+
+.encyclopedia-category-tag {
+  display: inline-block;
+  background: rgba(199, 160, 85, 0.2);
+  border: 1px solid var(--clh-gold);
+  color: var(--clh-gold);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.encyclopedia-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+  max-width: 800px;
+}
+
+.encyclopedia-subtitle {
+  font-size: var(--text-lg);
+  opacity: 0.85;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.encyclopedia-key-facts {
+  background: var(--color-bg-alt);
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.key-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-6);
+}
+
+.key-fact {
+  text-align: center;
+}
+
+.key-fact-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.key-fact-value {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--clh-brand);
+}
+
+.encyclopedia-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-12);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+@media (max-width: 900px) {
+  .encyclopedia-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.encyclopedia-main h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--clh-brand);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--clh-gold);
+}
+
+.encyclopedia-main h2:first-child {
+  margin-top: 0;
+}
+
+.encyclopedia-main h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+.encyclopedia-main p {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.encyclopedia-main ul,
+.encyclopedia-main ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.encyclopedia-main li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.encyclopedia-main strong {
+  color: var(--color-text);
+}
+
+.encyclopedia-main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+
+.encyclopedia-main th {
+  background: var(--clh-brand);
+  color: var(--color-text-inverse);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: 600;
+}
+
+.encyclopedia-main td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.encyclopedia-main tr:nth-child(even) td {
+  background: var(--color-bg-alt);
+}
+
+/* Sidebar */
+.encyclopedia-sidebar {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.sidebar-cta {
+  background: linear-gradient(135deg, var(--clh-brand) 0%, var(--clh-deep) 100%);
+  color: var(--color-text-inverse);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.sidebar-cta h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.sidebar-cta p {
+  font-size: var(--text-sm);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.sidebar-cta .btn {
+  width: 100%;
+  text-align: center;
+  background: var(--clh-gold);
+  color: var(--clh-deep);
+  font-weight: 700;
+}
+
+.sidebar-related {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.sidebar-related h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.sidebar-related ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-related li {
+  margin-bottom: var(--space-2);
+}
+
+.sidebar-related a {
+  color: var(--clh-brand);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  display: block;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s;
+}
+
+.sidebar-related a:hover {
+  color: var(--clh-gold);
+}
+
+/* FAQ Accordion */
+.encyclopedia-faq {
+  background: var(--color-bg-alt);
+  padding: var(--space-16) 0;
+}
+
+.encyclopedia-faq h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--clh-brand);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: inherit;
+}
+
+.faq-question:hover {
+  color: var(--clh-brand);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 var(--space-6);
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+  max-height: 500px;
+  padding: 0 var(--space-6) var(--space-5);
+}
+
+.faq-answer p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* Encyclopedia CTA */
+.encyclopedia-cta {
+  background: linear-gradient(135deg, var(--clh-brand) 0%, var(--clh-deep) 100%);
+  padding: var(--space-16) 0;
+  text-align: center;
+  color: var(--color-text-inverse);
+}
+
+.encyclopedia-cta h2 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.encyclopedia-cta p {
+  font-size: var(--text-lg);
+  opacity: 0.9;
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.encyclopedia-cta .btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  background: var(--clh-gold);
+  color: var(--clh-deep);
+  font-weight: 700;
+}
+
+/* Encyclopedia Hub Page */
+.encyclopedia-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.hub-category-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hub-category-card:hover {
+  border-color: var(--clh-brand);
+  box-shadow: 0 4px 20px rgba(45, 66, 131, 0.1);
+}
+
+.hub-category-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--clh-brand);
+  margin-bottom: var(--space-2);
+}
+
+.hub-category-card .topic-count {
+  font-size: var(--text-sm);
+  color: var(--clh-gold);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.hub-category-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.hub-category-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hub-category-card li {
+  margin-bottom: var(--space-1);
+}
+
+.hub-category-card a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color 0.2s;
+}
+
+.hub-category-card a:hover {
+  color: var(--clh-brand);
+}
+
+/* ==========================================================================
+   INTERACTIVE TOOLS (Calculators)
+   ========================================================================== */
+
+.tool-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-12) 0;
+}
+
+.tool-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.tool-input-group {
+  margin-bottom: var(--space-5);
+}
+
+.tool-input-group label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.tool-input-group input,
+.tool-input-group select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.tool-input-group input:focus,
+.tool-input-group select:focus {
+  outline: none;
+  border-color: var(--clh-brand);
+  box-shadow: 0 0 0 3px rgba(45, 66, 131, 0.1);
+}
+
+.tool-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .tool-input-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-btn {
+  width: 100%;
+  padding: var(--space-4);
+  background: var(--clh-brand);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: var(--space-4);
+  transition: background 0.2s;
+}
+
+.tool-btn:hover {
+  background: var(--clh-deep);
+}
+
+.tool-result {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--clh-brand) 0%, var(--clh-deep) 100%);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-inverse);
+  display: none;
+}
+
+.tool-result.visible {
+  display: block;
+}
+
+.tool-result-label {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+  margin-bottom: var(--space-1);
+}
+
+.tool-result-value {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+}
+
+.tool-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.tool-result-item {
+  text-align: center;
+}
+
+.tool-result-item .tool-result-label {
+  font-size: var(--text-xs);
+}
+
+.tool-result-item .tool-result-value {
+  font-size: var(--text-xl);
+}
+
+.tool-disclaimer {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
 }

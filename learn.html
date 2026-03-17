@@ -37,7 +37,7 @@
 <!-- Stylesheets -->
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="chatbot.css?v=4">
+  <link rel="stylesheet" href="chatbot.css?v=5">
 </head>
 
 <body>
@@ -103,11 +103,12 @@
     <!-- Category Tabs -->
     <div class="learn-filter-bar reveal" role="tablist" aria-label="Filter articles by category">
       <button class="learn-filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button class="learn-filter-tab" data-filter="loan-maturity" role="tab" aria-selected="false">Loan Maturity</button>
+      <button class="learn-filter-tab" data-filter="loan-types" role="tab" aria-selected="false">Loan Types</button>
       <button class="learn-filter-tab" data-filter="sba-programs" role="tab" aria-selected="false">SBA Programs</button>
-      <button class="learn-filter-tab" data-filter="hospitality" role="tab" aria-selected="false">Hospitality</button>
-      <button class="learn-filter-tab" data-filter="real-estate" role="tab" aria-selected="false">Real Estate</button>
+      <button class="learn-filter-tab" data-filter="lending-concepts" role="tab" aria-selected="false">Lending Concepts</button>
+      <button class="learn-filter-tab" data-filter="processes" role="tab" aria-selected="false">Processes</button>
       <button class="learn-filter-tab" data-filter="market-analysis" role="tab" aria-selected="false">Market Analysis</button>
+      <button class="learn-filter-tab" data-filter="tools" role="tab" aria-selected="false">Calculators</button>
     </div>
 
     <!-- Two-column layout: Articles + Sidebar -->
@@ -118,7 +119,7 @@
         <div class="learn-grid">
 
           <!-- Card 1: Maturity Wall -->
-          <article class="article-card reveal" data-category="loan-maturity">
+          <article class="article-card reveal" data-category="market-analysis">
             <div class="article-card-body">
               <span class="article-card-tag tag-blue">Loan Maturity</span>
               <h3><a href="articles/maturity-wall.html">What Happens When Your Commercial Loan Matures in 2026?</a></h3>
@@ -148,9 +149,9 @@
           </article>
 
           <!-- Card 3: DSCR Guide -->
-          <article class="article-card reveal reveal-delay-2" data-category="real-estate">
+          <article class="article-card reveal reveal-delay-2" data-category="lending-concepts">
             <div class="article-card-body">
-              <span class="article-card-tag tag-purple">Real Estate</span>
+              <span class="article-card-tag tag-purple">Lending Concepts</span>
               <h3><a href="articles/dscr-guide.html">What Is a DSCR Loan and How Do Lenders Calculate It?</a></h3>
               <p>DSCR is the single most important metric in commercial underwriting. Here is what it means, how to calculate it, and what lenders require in 2026.</p>
               <div class="article-card-meta">
@@ -159,6 +160,186 @@
                 <span>February 10, 2026</span>
               </div>
               <a href="articles/dscr-guide.html" class="article-card-link">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- ============ ENCYCLOPEDIA PAGES ============ -->
+
+          <!-- Commercial Mortgage -->
+          <article class="article-card reveal" data-category="loan-types">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-blue">Loan Types</span>
+              <h3><a href="encyclopedia/loan-types/commercial-mortgage.html">What Is a Commercial Mortgage? The Complete Guide for Borrowers</a></h3>
+              <p>How commercial mortgages work, who qualifies, typical terms and rates, and how to find the right lender for your commercial property purchase or refinance.</p>
+              <div class="article-card-meta">
+                <span>14 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/loan-types/commercial-mortgage.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- CRE Loan Types -->
+          <article class="article-card reveal" data-category="loan-types">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-blue">Loan Types</span>
+              <h3><a href="encyclopedia/loan-types/cre-loan-types.html">Commercial Real Estate Loan Types: A Complete Comparison Guide</a></h3>
+              <p>Compare every type of commercial real estate loan including conventional, SBA, CMBS, bridge, mezzanine, hard money, and more.</p>
+              <div class="article-card-meta">
+                <span>12 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/loan-types/cre-loan-types.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- SBA 7(a) -->
+          <article class="article-card reveal" data-category="sba-programs">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-green">SBA Programs</span>
+              <h3><a href="encyclopedia/loan-types/sba-7a-loans.html">SBA 7(a) Loans: Rates, Requirements, and How to Qualify in 2026</a></h3>
+              <p>Current rates, eligibility requirements, loan limits, the application process, and how to maximize approval odds for SBA 7(a) loans.</p>
+              <div class="article-card-meta">
+                <span>14 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/loan-types/sba-7a-loans.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- SBA 504 -->
+          <article class="article-card reveal" data-category="sba-programs">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-green">SBA Programs</span>
+              <h3><a href="encyclopedia/loan-types/sba-504-loans.html">SBA 504 Loans: Fixed Rates, Low Down Payment, and How to Apply</a></h3>
+              <p>The SBA 504 loan program offers below-market fixed rates and just 10% down for owner-occupied commercial real estate.</p>
+              <div class="article-card-meta">
+                <span>12 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/loan-types/sba-504-loans.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- SBA 7(a) vs 504 -->
+          <article class="article-card reveal" data-category="sba-programs">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-green">SBA Programs</span>
+              <h3><a href="encyclopedia/comparisons/sba-7a-vs-504.html">SBA 7(a) vs. 504 Loans: Which Is Right for Your Business?</a></h3>
+              <p>Side-by-side comparison of SBA 7(a) and 504 loans covering rates, terms, down payment, eligible uses, and qualification requirements.</p>
+              <div class="article-card-meta">
+                <span>10 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/comparisons/sba-7a-vs-504.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- Bridge Loans -->
+          <article class="article-card reveal" data-category="loan-types">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-blue">Loan Types</span>
+              <h3><a href="encyclopedia/loan-types/commercial-bridge-loans.html">Commercial Bridge Loans: When Speed and Flexibility Matter Most</a></h3>
+              <p>How commercial bridge loans work, typical rates and terms, when they make sense, and how to qualify for short-term CRE financing.</p>
+              <div class="article-card-meta">
+                <span>12 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/loan-types/commercial-bridge-loans.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- DSCR Explained -->
+          <article class="article-card reveal" data-category="lending-concepts">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-purple">Lending Concepts</span>
+              <h3><a href="encyclopedia/lending-concepts/dscr-explained.html">DSCR Explained: What It Is, How to Calculate It, and Why Lenders Care</a></h3>
+              <p>What Debt Service Coverage Ratio means, how to calculate it, what lenders require, and strategies to improve your DSCR.</p>
+              <div class="article-card-meta">
+                <span>14 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/lending-concepts/dscr-explained.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- CRE Refinance -->
+          <article class="article-card reveal" data-category="processes">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-orange">Processes</span>
+              <h3><a href="encyclopedia/processes/cre-refinance-guide.html">How to Refinance a Commercial Property: The Step-by-Step Guide</a></h3>
+              <p>When and how to refinance your commercial real estate loan. Covers rate-and-term refinance, cash-out options, timing, and lender requirements.</p>
+              <div class="article-card-meta">
+                <span>12 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/processes/cre-refinance-guide.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- Loan Application Process -->
+          <article class="article-card reveal" data-category="processes">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-orange">Processes</span>
+              <h3><a href="encyclopedia/processes/commercial-loan-application.html">The Commercial Loan Application Process: From Start to Funding</a></h3>
+              <p>Step-by-step walkthrough of the commercial loan application process. Documents needed, timeline expectations, and how to avoid delays.</p>
+              <div class="article-card-meta">
+                <span>12 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/processes/commercial-loan-application.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- CRE Market Outlook 2026 -->
+          <article class="article-card reveal" data-category="market-analysis">
+            <div class="article-card-body">
+              <span class="article-card-tag tag-red">Market Analysis</span>
+              <h3><a href="encyclopedia/market-conditions/cre-market-outlook-2026.html">Commercial Real Estate Market Outlook 2026: Trends, Rates, and Opportunities</a></h3>
+              <p>Interest rate forecasts, property sector performance, the maturity wall, and where the best opportunities lie for borrowers in 2026.</p>
+              <div class="article-card-meta">
+                <span>14 min read</span>
+                <span class="meta-dot">·</span>
+                <span>March 2026</span>
+              </div>
+              <a href="encyclopedia/market-conditions/cre-market-outlook-2026.html" class="article-card-link">Read Guide →</a>
+            </div>
+          </article>
+
+          <!-- ============ CALCULATORS ============ -->
+
+          <!-- DSCR Calculator -->
+          <article class="article-card reveal" data-category="tools">
+            <div class="article-card-body">
+              <span class="article-card-tag" style="background: var(--clh-gold); color: #fff;">Calculator</span>
+              <h3><a href="tools/dscr-calculator.html">DSCR Calculator: Check Your Debt Service Coverage Ratio</a></h3>
+              <p>Instantly calculate your property's DSCR. Enter your income and expenses to see if you meet lender requirements before you apply.</p>
+              <div class="article-card-meta">
+                <span>Interactive Tool</span>
+              </div>
+              <a href="tools/dscr-calculator.html" class="article-card-link">Use Calculator →</a>
+            </div>
+          </article>
+
+          <!-- Commercial Mortgage Calculator -->
+          <article class="article-card reveal" data-category="tools">
+            <div class="article-card-body">
+              <span class="article-card-tag" style="background: var(--clh-gold); color: #fff;">Calculator</span>
+              <h3><a href="tools/commercial-mortgage-calculator.html">Commercial Mortgage Calculator: Estimate Your Monthly Payment</a></h3>
+              <p>Calculate your estimated monthly payment, total interest, and balloon payment for any commercial mortgage scenario.</p>
+              <div class="article-card-meta">
+                <span>Interactive Tool</span>
+              </div>
+              <a href="tools/commercial-mortgage-calculator.html" class="article-card-link">Use Calculator →</a>
             </div>
           </article>
 
@@ -289,6 +470,6 @@
 <!-- App JS -->
 <script src="app.js"></script>
 
-  <script src="chatbot.js?v=4"></script>
+  <script src="chatbot.js?v=5"></script>
 </body>
 </html>
