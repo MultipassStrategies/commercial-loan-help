@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Find Your Commercial Loan Match | Commercial Loan Help</title>
+<meta name="description" content="Answer 7 quick questions. Our ClearPath™ system matches you to the right commercial lender from hundreds of relationships. No credit pull. No cost.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.commercialloanhelp.com/match">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Commercial Loan Match | Commercial Loan Help">
+<meta property="og:description" content="Answer 7 quick questions. Our ClearPath™ system matches you to the right commercial lender from hundreds of relationships. No credit pull. No cost.">
+<meta property="og:url" content="https://www.commercialloanhelp.com/match">
+<meta property="og:site_name" content="Commercial Loan Help">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- JSON-LD: Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ClearPath™ Commercial Loan Matching",
+  "description": "Answer 7 quick questions and get matched to the right commercial lender from hundreds of established relationships. No credit pull. No cost.",
+  "provider": {
+    "@type": "FinancialService",
+    "name": "Commercial Loan Help",
+    "url": "https://www.commercialloanhelp.com"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": "Commercial Loan Matching",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+}
+</script>
+  <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body class="match-page">
+
+<!-- ====================================================================
+     NAVIGATION (Logo Only — distraction-free)
+     ==================================================================== -->
+<nav class="site-nav site-nav--minimal" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Commercial Loan Help — Home">
+      <img src="logo-small.jpg" alt="Commercial Loan Help" class="nav-logo-img">
+    </a>
+    <div class="nav-right"></div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ====================================================================
+     ABOVE-FORM SECTION
+     ==================================================================== -->
+<section class="match-hero">
+  <div class="container">
+    <h1>Find Out Exactly Which Loan Is Right for You</h1>
+    <p>Answer 7 quick questions. Our ClearPath™ system matches your profile to the best lender from our network of hundreds of established relationships — instantly.</p>
+    <div class="trust-trio">
+      <span>✓ No Credit Pull</span>
+      <span>✓ No Commitment</span>
+      <span>✓ Takes 60 Seconds</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     MULTI-STEP WIZARD FORM
+     ==================================================================== -->
+<div class="wizard-container">
+  <!-- Progress Bar -->
+  <div class="wizard-progress">
+    <div class="wizard-progress-bar">
+      <div class="wizard-progress-fill" id="progressFill" style="width: 14.28%"></div>
+    </div>
+    <span class="wizard-progress-label" id="progressLabel">1 / 7</span>
+  </div>
+
+  <form id="matchForm" novalidate>
+    <!-- STEP 1: Loan Type -->
+    <div class="wizard-step active" data-step="1">
+      <h2>What type of loan are you looking for?</h2>
+      <div class="radio-cards">
+        <div class="radio-card">
+          <input type="radio" id="loan-cre" name="loan_type" value="CRE Loan">
+          <label for="loan-cre"><span class="radio-dot"></span> CRE Loan</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="loan-sba" name="loan_type" value="SBA Loan">
+          <label for="loan-sba"><span class="radio-dot"></span> SBA Loan</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="loan-wc" name="loan_type" value="Small Business Working Capital">
+          <label for="loan-wc"><span class="radio-dot"></span> Small Business Working Capital</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="loan-construction" name="loan_type" value="Construction Loan">
+          <label for="loan-construction"><span class="radio-dot"></span> Construction Loan</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="loan-unsure" name="loan_type" value="Not Sure">
+          <label for="loan-unsure"><span class="radio-dot"></span> Not Sure</label>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <div></div>
+        <button type="button" class="btn btn-primary btn-next" data-next="2">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Property Type -->
+    <div class="wizard-step" data-step="2">
+      <h2>What type of property is this for?</h2>
+      <div class="radio-cards radio-cards--3col">
+        <div class="radio-card">
+          <input type="radio" id="prop-multi" name="property_type" value="Multifamily">
+          <label for="prop-multi"><span class="radio-dot"></span> Multifamily</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-office" name="property_type" value="Office">
+          <label for="prop-office"><span class="radio-dot"></span> Office</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-retail" name="property_type" value="Retail">
+          <label for="prop-retail"><span class="radio-dot"></span> Retail</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-industrial" name="property_type" value="Industrial">
+          <label for="prop-industrial"><span class="radio-dot"></span> Industrial</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-hotel" name="property_type" value="Hotel/Hospitality">
+          <label for="prop-hotel"><span class="radio-dot"></span> Hotel/Hospitality</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-mixed" name="property_type" value="Mixed-Use">
+          <label for="prop-mixed"><span class="radio-dot"></span> Mixed-Use</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-storage" name="property_type" value="Self-Storage">
+          <label for="prop-storage"><span class="radio-dot"></span> Self-Storage</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-land" name="property_type" value="Land">
+          <label for="prop-land"><span class="radio-dot"></span> Land</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="prop-na" name="property_type" value="Not Applicable">
+          <label for="prop-na"><span class="radio-dot"></span> Not Applicable</label>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="1">← Back</button>
+        <button type="button" class="btn btn-primary btn-next" data-next="3">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: State -->
+    <div class="wizard-step" data-step="3">
+      <h2>What state is your property or business in?</h2>
+      <select class="wizard-select" name="state" id="stateSelect">
+        <option value="">Select a state…</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="2">← Back</button>
+        <button type="button" class="btn btn-primary btn-next" data-next="4">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Financing Amount -->
+    <div class="wizard-step" data-step="4">
+      <h2>How much financing do you need?</h2>
+      <div class="radio-cards">
+        <div class="radio-card">
+          <input type="radio" id="amt-under100" name="amount" value="Under $100K">
+          <label for="amt-under100"><span class="radio-dot"></span> Under $100K</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="amt-100-500" name="amount" value="$100K–$500K">
+          <label for="amt-100-500"><span class="radio-dot"></span> $100K–$500K</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="amt-500-2m" name="amount" value="$500K–$2M">
+          <label for="amt-500-2m"><span class="radio-dot"></span> $500K–$2M</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="amt-2m-10m" name="amount" value="$2M–$10M">
+          <label for="amt-2m-10m"><span class="radio-dot"></span> $2M–$10M</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="amt-over10m" name="amount" value="Over $10M">
+          <label for="amt-over10m"><span class="radio-dot"></span> Over $10M</label>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="3">← Back</button>
+        <button type="button" class="btn btn-primary btn-next" data-next="5">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Credit Score -->
+    <div class="wizard-step" data-step="5">
+      <h2>What's your approximate credit score?</h2>
+      <div class="radio-cards">
+        <div class="radio-card">
+          <input type="radio" id="credit-below620" name="credit_score" value="Below 620">
+          <label for="credit-below620"><span class="radio-dot"></span> Below 620</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="credit-620-679" name="credit_score" value="620–679">
+          <label for="credit-620-679"><span class="radio-dot"></span> 620–679</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="credit-680-719" name="credit_score" value="680–719">
+          <label for="credit-680-719"><span class="radio-dot"></span> 680–719</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="credit-720" name="credit_score" value="720+">
+          <label for="credit-720"><span class="radio-dot"></span> 720+</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="credit-unsure" name="credit_score" value="Not Sure">
+          <label for="credit-unsure"><span class="radio-dot"></span> Not Sure</label>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="4">← Back</button>
+        <button type="button" class="btn btn-primary btn-next" data-next="6">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 6: Timeline -->
+    <div class="wizard-step" data-step="6">
+      <h2>How soon do you need financing?</h2>
+      <div class="radio-cards">
+        <div class="radio-card">
+          <input type="radio" id="time-asap" name="timeline" value="Immediately (within 30 days)">
+          <label for="time-asap"><span class="radio-dot"></span> Immediately (within 30 days)</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="time-1-3" name="timeline" value="1–3 months">
+          <label for="time-1-3"><span class="radio-dot"></span> 1–3 months</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="time-3-6" name="timeline" value="3–6 months">
+          <label for="time-3-6"><span class="radio-dot"></span> 3–6 months</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="time-6plus" name="timeline" value="6+ months">
+          <label for="time-6plus"><span class="radio-dot"></span> 6+ months</label>
+        </div>
+        <div class="radio-card">
+          <input type="radio" id="time-exploring" name="timeline" value="Just exploring">
+          <label for="time-exploring"><span class="radio-dot"></span> Just exploring</label>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="5">← Back</button>
+        <button type="button" class="btn btn-primary btn-next" data-next="7">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 7: Contact Info -->
+    <div class="wizard-step" data-step="7">
+      <h2>How can we reach you?</h2>
+      <div class="contact-fields">
+        <div class="form-group">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="John Smith" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email Address <span style="color: var(--color-error);">*</span></label>
+          <input type="email" id="contact-email" name="email" placeholder="john@example.com" required autocomplete="email">
+          <span class="form-error">Please enter a valid email address.</span>
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Phone Number</label>
+          <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button type="button" class="btn-back" data-prev="6">← Back</button>
+        <button type="submit" class="btn btn-accent btn-lg btn-next">See My Options →</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Success State (hidden by default) -->
+  <div class="wizard-success" id="wizardSuccess" style="display: none;">
+    <div class="wizard-success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h2>Thank You!</h2>
+    <p>A specialist will contact you within one business day with your personalized loan options.</p>
+  </div>
+</div>
+
+<!-- ====================================================================
+     BELOW FORM
+     ==================================================================== -->
+<section class="match-below" id="matchBelow">
+  <p>Prefer to talk to someone first?</p>
+  <a href="#" class="btn btn-outline">Book a Free 15-Minute Call →</a>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Column 1: Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo-small.jpg" alt="Commercial Loan Help" class="footer-logo-img">
+        </div>
+        <p>Matching borrowers to the right commercial lender — fast. Any loan size. Nationwide.</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs);">Licensed in all 50 states</p>
+      </div>
+
+      <!-- Column 2: Loan Products -->
+      <div class="footer-col">
+        <h4>Loan Products</h4>
+        <ul role="list">
+          <li><a href="loans.html">All Loan Products</a></li>
+          <li><a href="loans.html#sba">SBA Loans</a></li>
+          <li><a href="loans.html#bridge">Bridge Loans</a></li>
+          <li><a href="loans.html#cmbs">CMBS Loans</a></li>
+          <li><a href="loans.html#mezzanine">Mezzanine Debt</a></li>
+          <li><a href="loans.html#private-credit">Private Credit</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Who We Help -->
+      <div class="footer-col">
+        <h4>Who We Help</h4>
+        <ul role="list">
+          <li><a href="investors.html">Real Estate Investors</a></li>
+          <li><a href="small-business.html">Small Business Owners</a></li>
+          <li><a href="hospitality.html">Hospitality Operators</a></li>
+          <li><a href="match.html">Find My Loan</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Resources -->
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul role="list">
+          <li><a href="learn.html">Education Hub</a></li>
+          <li><a href="articles/maturity-wall.html">2026 Maturity Wall Guide</a></li>
+          <li><a href="articles/sba-comparison.html">SBA 7(a) vs 504</a></li>
+          <li><a href="articles/dscr-guide.html">DSCR Guide</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Commercial Loan Help. All rights reserved. Commercial Loan Help is a commercial loan marketplace and advisory service. We are not a lender. All loan products and rates are subject to lender approval and may vary based on borrower qualifications, property type, and market conditions. Information on this website is for informational purposes only and does not constitute financial advice.</p>
+      <p style="margin-top: var(--space-3);">
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- App JS (for shared functionality) -->
+<script src="app.js"></script>
+
+<!-- Match Wizard JS -->
+<script>
+(function() {
+  const form = document.getElementById('matchForm');
+  const progressFill = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  const successPanel = document.getElementById('wizardSuccess');
+  const matchBelow = document.getElementById('matchBelow');
+  const totalSteps = 7;
+  let currentStep = 1;
+
+  function showStep(step) {
+    // Hide all steps
+    document.querySelectorAll('.wizard-step').forEach(s => {
+      s.classList.remove('active');
+    });
+    // Show target step
+    const target = document.querySelector(`.wizard-step[data-step="${step}"]`);
+    if (target) {
+      target.classList.add('active');
+      // Re-trigger animation
+      target.style.animation = 'none';
+      target.offsetHeight; // force reflow
+      target.style.animation = '';
+    }
+    currentStep = step;
+    // Update progress
+    const pct = (step / totalSteps) * 100;
+    progressFill.style.width = pct + '%';
+    progressLabel.textContent = step + ' / ' + totalSteps;
+    // Scroll to top of wizard
+    window.scrollTo({ top: document.querySelector('.wizard-progress').offsetTop - 100, behavior: 'smooth' });
+  }
+
+  // Next buttons
+  document.querySelectorAll('.btn-next[data-next]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nextStep = parseInt(btn.getAttribute('data-next'));
+      showStep(nextStep);
+    });
+  });
+
+  // Back buttons
+  document.querySelectorAll('.btn-back[data-prev]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const prevStep = parseInt(btn.getAttribute('data-prev'));
+      showStep(prevStep);
+    });
+  });
+
+  // Auto-advance on radio card click (steps 1, 2, 4, 5, 6)
+  [1, 2, 4, 5, 6].forEach(stepNum => {
+    const stepEl = document.querySelector(`.wizard-step[data-step="${stepNum}"]`);
+    if (!stepEl) return;
+    stepEl.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        // Small delay for visual feedback
+        setTimeout(() => {
+          const nextBtn = stepEl.querySelector('.btn-next[data-next]');
+          if (nextBtn) {
+            const nextStep = parseInt(nextBtn.getAttribute('data-next'));
+            showStep(nextStep);
+          }
+        }, 250);
+      });
+    });
+  });
+
+  // Form submit
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validate email
+    const emailField = document.getElementById('contact-email');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Clear errors
+    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+
+    if (!emailField.value.trim() || !emailRegex.test(emailField.value)) {
+      emailField.classList.add('error');
+      emailField.focus();
+      return;
+    }
+
+    // Collect all data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    console.log('Match form submission:', data);
+
+    // Show success
+    form.style.display = 'none';
+    document.querySelector('.wizard-progress').style.display = 'none';
+    successPanel.style.display = 'block';
+
+    // Hide below-form section
+    if (matchBelow) matchBelow.style.display = 'none';
+  });
+})();
+</script>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
